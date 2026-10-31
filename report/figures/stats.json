@@ -1,0 +1,3266 @@
+{
+ "rows": {
+  "dw.bridge_order_seller": 100010,
+  "dw.dim_customer": 96356,
+  "dw.dim_date": 1828,
+  "dw.dim_geography": 19180,
+  "dw.dim_order_profile": 161,
+  "dw.dim_payment_type": 5,
+  "dw.dim_product": 32952,
+  "dw.dim_seller": 3096,
+  "dw.fact_order_fulfillment": 99441,
+  "dw.fact_payment": 103886,
+  "dw.fact_review": 99224,
+  "dw.fact_sales": 112650,
+  "dw.fact_seller_monthly_snapshot": 39678,
+  "etl.batch_log": 11,
+  "etl.dq_result": 286,
+  "etl.load_stats": 110,
+  "etl.watermark": 1,
+  "mart.agg_sales_month_category_state": 11823,
+  "mart.dss_late_risk_importance": 26,
+  "mart.dss_late_risk_metrics": 4,
+  "mart.dss_late_risk_scores": 103644,
+  "mart.dss_promise_backtest": 1227200,
+  "mart.dss_promise_orders": 38350,
+  "mart.dss_review_by_delay": 5,
+  "mart.dss_seller_metrics": 444,
+  "stg.customers": 99441,
+  "stg.geolocation": 19015,
+  "stg.orders": 99441,
+  "stg.order_items": 112650,
+  "stg.payments": 103886,
+  "stg.products": 32951,
+  "stg.raw_customers": 99441,
+  "stg.raw_geolocation": 1000163,
+  "stg.raw_orders": 99441,
+  "stg.raw_order_items": 112650,
+  "stg.raw_payments": 103886,
+  "stg.raw_products": 32951,
+  "stg.raw_reviews": 99224,
+  "stg.raw_sellers": 3095,
+  "stg.ref_category_group": 73,
+  "stg.ref_holidays": 39,
+  "stg.ref_states": 27,
+  "stg.reviews": 99224,
+  "stg.sellers": 3095
+ },
+ "raw_rows": {
+  "raw_orders": 99441,
+  "raw_order_items": 112650,
+  "raw_payments": 103886,
+  "raw_reviews": 99224,
+  "raw_customers": 99441,
+  "raw_products": 32951,
+  "raw_sellers": 3095,
+  "raw_geolocation": 1000163
+ },
+ "kpi": {
+  "gmv": 13591643.7,
+  "orders": 98666.0,
+  "cust_versions": 95674.0,
+  "sellers": 3095.0,
+  "products": 32951.0,
+  "customers": 96096
+ },
+ "deliv": {
+  "n": 96281.0,
+  "late": 0.06783269804011176,
+  "lead": 12.568100830896427,
+  "prom": 23.73726917174731,
+  "handling": 2.8042163153049695,
+  "transit": 9.33483806261821,
+  "appr": 10.291837219515624,
+  "review": 4.155861809360492
+ },
+ "batch": [
+  {
+   "batch_id": 1,
+   "batch_type": "INITIAL",
+   "window_start": "1900-01-01",
+   "window_end": "2018-01-01",
+   "started_at": "2026-10-30 18:13:00.495586",
+   "finished_at": "2026-10-30 18:13:01.954021",
+   "duration_sec": 1.4585625000181608,
+   "status": "SUCCESS",
+   "message": "+51234 sales rows, 0 fulfillment rows updated"
+  },
+  {
+   "batch_id": 2,
+   "batch_type": "INCREMENTAL",
+   "window_start": "2018-01-01",
+   "window_end": "2018-02-01",
+   "started_at": "2026-10-30 18:13:02.636553",
+   "finished_at": "2026-10-30 18:13:03.609172",
+   "duration_sec": 0.9722735999966972,
+   "status": "SUCCESS",
+   "message": "+8208 sales rows, 2456 fulfillment rows updated"
+  },
+  {
+   "batch_id": 3,
+   "batch_type": "INCREMENTAL",
+   "window_start": "2018-02-01",
+   "window_end": "2018-03-01",
+   "started_at": "2026-10-30 18:13:03.845863",
+   "finished_at": "2026-10-30 18:13:04.999755",
+   "duration_sec": 1.154126500012353,
+   "status": "SUCCESS",
+   "message": "+7672 sales rows, 2853 fulfillment rows updated"
+  },
+  {
+   "batch_id": 4,
+   "batch_type": "INCREMENTAL",
+   "window_start": "2018-03-01",
+   "window_end": "2018-04-01",
+   "started_at": "2026-10-30 18:13:05.196776",
+   "finished_at": "2026-10-30 18:13:06.253021",
+   "duration_sec": 1.0560622999910265,
+   "status": "SUCCESS",
+   "message": "+8217 sales rows, 3465 fulfillment rows updated"
+  },
+  {
+   "batch_id": 5,
+   "batch_type": "INCREMENTAL",
+   "window_start": "2018-04-01",
+   "window_end": "2018-05-01",
+   "started_at": "2026-10-30 18:13:06.557701",
+   "finished_at": "2026-10-30 18:13:07.848790",
+   "duration_sec": 1.2906162000144832,
+   "status": "SUCCESS",
+   "message": "+7975 sales rows, 3698 fulfillment rows updated"
+  },
+  {
+   "batch_id": 6,
+   "batch_type": "INCREMENTAL",
+   "window_start": "2018-05-01",
+   "window_end": "2018-06-01",
+   "started_at": "2026-10-30 18:13:08.053521",
+   "finished_at": "2026-10-30 18:13:09.308255",
+   "duration_sec": 1.2546937000006437,
+   "status": "SUCCESS",
+   "message": "+7925 sales rows, 2741 fulfillment rows updated"
+  },
+  {
+   "batch_id": 7,
+   "batch_type": "INCREMENTAL",
+   "window_start": "2018-06-01",
+   "window_end": "2018-07-01",
+   "started_at": "2026-10-30 18:13:09.533601",
+   "finished_at": "2026-10-30 18:13:10.888109",
+   "duration_sec": 1.3547704000375234,
+   "status": "SUCCESS",
+   "message": "+7078 sales rows, 2423 fulfillment rows updated"
+  },
+  {
+   "batch_id": 8,
+   "batch_type": "INCREMENTAL",
+   "window_start": "2018-07-01",
+   "window_end": "2018-08-01",
+   "started_at": "2026-10-30 18:13:11.249157",
+   "finished_at": "2026-10-30 18:13:12.709511",
+   "duration_sec": 1.460790699988138,
+   "status": "SUCCESS",
+   "message": "+7092 sales rows, 1687 fulfillment rows updated"
+  },
+  {
+   "batch_id": 9,
+   "batch_type": "INCREMENTAL",
+   "window_start": "2018-08-01",
+   "window_end": "2018-09-01",
+   "started_at": "2026-10-30 18:13:13.462221",
+   "finished_at": "2026-10-30 18:13:15.471150",
+   "duration_sec": 2.0089524000068195,
+   "status": "SUCCESS",
+   "message": "+7248 sales rows, 2010 fulfillment rows updated"
+  },
+  {
+   "batch_id": 10,
+   "batch_type": "INCREMENTAL",
+   "window_start": "2018-09-01",
+   "window_end": "2018-10-01",
+   "started_at": "2026-10-30 18:13:15.733520",
+   "finished_at": "2026-10-30 18:13:17.124959",
+   "duration_sec": 1.3913106999825686,
+   "status": "SUCCESS",
+   "message": "+1 sales rows, 56 fulfillment rows updated"
+  },
+  {
+   "batch_id": 11,
+   "batch_type": "INCREMENTAL",
+   "window_start": "2018-10-01",
+   "window_end": "2018-11-01",
+   "started_at": "2026-10-30 18:13:17.178311",
+   "finished_at": "2026-10-30 18:13:18.494026",
+   "duration_sec": 1.3158941000001505,
+   "status": "SUCCESS",
+   "message": "+0 sales rows, 3 fulfillment rows updated"
+  }
+ ],
+ "load": [
+  {
+   "batch_id": 1,
+   "table_name": "dw.bridge_order_seller",
+   "rows_inserted": 45394,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 1,
+   "table_name": "dw.dim_customer",
+   "rows_inserted": 44126,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 1,
+   "table_name": "dw.dim_geography",
+   "rows_inserted": 19179,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 1,
+   "table_name": "dw.dim_product",
+   "rows_inserted": 17451,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 1,
+   "table_name": "dw.dim_seller",
+   "rows_inserted": 1811,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 1,
+   "table_name": "dw.fact_order_fulfillment",
+   "rows_inserted": 45430,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 1,
+   "table_name": "dw.fact_payment",
+   "rows_inserted": 47871,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 1,
+   "table_name": "dw.fact_review",
+   "rows_inserted": 43060,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 1,
+   "table_name": "dw.fact_sales",
+   "rows_inserted": 51234,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 1,
+   "table_name": "dw.fact_seller_monthly_snapshot",
+   "rows_inserted": 13548,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 2,
+   "table_name": "dw.bridge_order_seller",
+   "rows_inserted": 7333,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 2,
+   "table_name": "dw.dim_customer",
+   "rows_inserted": 7053,
+   "rows_updated": 24
+  },
+  {
+   "batch_id": 2,
+   "table_name": "dw.dim_geography",
+   "rows_inserted": 0,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 2,
+   "table_name": "dw.dim_product",
+   "rows_inserted": 1984,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 2,
+   "table_name": "dw.dim_seller",
+   "rows_inserted": 141,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 2,
+   "table_name": "dw.fact_order_fulfillment",
+   "rows_inserted": 7269,
+   "rows_updated": 2456
+  },
+  {
+   "batch_id": 2,
+   "table_name": "dw.fact_payment",
+   "rows_inserted": 7563,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 2,
+   "table_name": "dw.fact_review",
+   "rows_inserted": 6179,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 2,
+   "table_name": "dw.fact_sales",
+   "rows_inserted": 8208,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 2,
+   "table_name": "dw.fact_seller_monthly_snapshot",
+   "rows_inserted": 1952,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 3,
+   "table_name": "dw.bridge_order_seller",
+   "rows_inserted": 6746,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 3,
+   "table_name": "dw.dim_customer",
+   "rows_inserted": 6461,
+   "rows_updated": 7
+  },
+  {
+   "batch_id": 3,
+   "table_name": "dw.dim_geography",
+   "rows_inserted": 0,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 3,
+   "table_name": "dw.dim_product",
+   "rows_inserted": 1705,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 3,
+   "table_name": "dw.dim_seller",
+   "rows_inserted": 120,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 3,
+   "table_name": "dw.fact_order_fulfillment",
+   "rows_inserted": 6728,
+   "rows_updated": 2853
+  },
+  {
+   "batch_id": 3,
+   "table_name": "dw.fact_payment",
+   "rows_inserted": 6952,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 3,
+   "table_name": "dw.fact_review",
+   "rows_inserted": 6101,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 3,
+   "table_name": "dw.fact_sales",
+   "rows_inserted": 7672,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 3,
+   "table_name": "dw.fact_seller_monthly_snapshot",
+   "rows_inserted": 2072,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 4,
+   "table_name": "dw.bridge_order_seller",
+   "rows_inserted": 7281,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 4,
+   "table_name": "dw.dim_customer",
+   "rows_inserted": 6993,
+   "rows_updated": 25
+  },
+  {
+   "batch_id": 4,
+   "table_name": "dw.dim_geography",
+   "rows_inserted": 0,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 4,
+   "table_name": "dw.dim_product",
+   "rows_inserted": 1824,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 4,
+   "table_name": "dw.dim_seller",
+   "rows_inserted": 113,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 4,
+   "table_name": "dw.fact_order_fulfillment",
+   "rows_inserted": 7211,
+   "rows_updated": 3465
+  },
+  {
+   "batch_id": 4,
+   "table_name": "dw.fact_payment",
+   "rows_inserted": 7512,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 4,
+   "table_name": "dw.fact_review",
+   "rows_inserted": 7803,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 4,
+   "table_name": "dw.fact_sales",
+   "rows_inserted": 8217,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 4,
+   "table_name": "dw.fact_seller_monthly_snapshot",
+   "rows_inserted": 2185,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 5,
+   "table_name": "dw.bridge_order_seller",
+   "rows_inserted": 7069,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 5,
+   "table_name": "dw.dim_customer",
+   "rows_inserted": 6731,
+   "rows_updated": 15
+  },
+  {
+   "batch_id": 5,
+   "table_name": "dw.dim_geography",
+   "rows_inserted": 0,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 5,
+   "table_name": "dw.dim_product",
+   "rows_inserted": 2049,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 5,
+   "table_name": "dw.dim_seller",
+   "rows_inserted": 202,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 5,
+   "table_name": "dw.fact_order_fulfillment",
+   "rows_inserted": 6939,
+   "rows_updated": 3698
+  },
+  {
+   "batch_id": 5,
+   "table_name": "dw.fact_payment",
+   "rows_inserted": 7209,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 5,
+   "table_name": "dw.fact_review",
+   "rows_inserted": 7287,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 5,
+   "table_name": "dw.fact_sales",
+   "rows_inserted": 7975,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 5,
+   "table_name": "dw.fact_seller_monthly_snapshot",
+   "rows_inserted": 2387,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 6,
+   "table_name": "dw.bridge_order_seller",
+   "rows_inserted": 6967,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 6,
+   "table_name": "dw.dim_customer",
+   "rows_inserted": 6645,
+   "rows_updated": 21
+  },
+  {
+   "batch_id": 6,
+   "table_name": "dw.dim_geography",
+   "rows_inserted": 0,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 6,
+   "table_name": "dw.dim_product",
+   "rows_inserted": 1882,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 6,
+   "table_name": "dw.dim_seller",
+   "rows_inserted": 172,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 6,
+   "table_name": "dw.fact_order_fulfillment",
+   "rows_inserted": 6873,
+   "rows_updated": 2741
+  },
+  {
+   "batch_id": 6,
+   "table_name": "dw.fact_payment",
+   "rows_inserted": 7135,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 6,
+   "table_name": "dw.fact_review",
+   "rows_inserted": 7458,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 6,
+   "table_name": "dw.fact_sales",
+   "rows_inserted": 7925,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 6,
+   "table_name": "dw.fact_seller_monthly_snapshot",
+   "rows_inserted": 2559,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 7,
+   "table_name": "dw.bridge_order_seller",
+   "rows_inserted": 6274,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 7,
+   "table_name": "dw.dim_customer",
+   "rows_inserted": 5959,
+   "rows_updated": 17
+  },
+  {
+   "batch_id": 7,
+   "table_name": "dw.dim_geography",
+   "rows_inserted": 0,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 7,
+   "table_name": "dw.dim_product",
+   "rows_inserted": 1899,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 7,
+   "table_name": "dw.dim_seller",
+   "rows_inserted": 191,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 7,
+   "table_name": "dw.fact_order_fulfillment",
+   "rows_inserted": 6167,
+   "rows_updated": 2423
+  },
+  {
+   "batch_id": 7,
+   "table_name": "dw.fact_payment",
+   "rows_inserted": 6419,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 7,
+   "table_name": "dw.fact_review",
+   "rows_inserted": 6715,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 7,
+   "table_name": "dw.fact_sales",
+   "rows_inserted": 7078,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 7,
+   "table_name": "dw.fact_seller_monthly_snapshot",
+   "rows_inserted": 2750,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 8,
+   "table_name": "dw.bridge_order_seller",
+   "rows_inserted": 6374,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 8,
+   "table_name": "dw.dim_customer",
+   "rows_inserted": 6091,
+   "rows_updated": 18
+  },
+  {
+   "batch_id": 8,
+   "table_name": "dw.dim_geography",
+   "rows_inserted": 0,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 8,
+   "table_name": "dw.dim_product",
+   "rows_inserted": 2066,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 8,
+   "table_name": "dw.dim_seller",
+   "rows_inserted": 190,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 8,
+   "table_name": "dw.fact_order_fulfillment",
+   "rows_inserted": 6292,
+   "rows_updated": 1687
+  },
+  {
+   "batch_id": 8,
+   "table_name": "dw.fact_payment",
+   "rows_inserted": 6507,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 8,
+   "table_name": "dw.fact_review",
+   "rows_inserted": 5634,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 8,
+   "table_name": "dw.fact_sales",
+   "rows_inserted": 7092,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 8,
+   "table_name": "dw.fact_seller_monthly_snapshot",
+   "rows_inserted": 2940,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 9,
+   "table_name": "dw.bridge_order_seller",
+   "rows_inserted": 6571,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 9,
+   "table_name": "dw.dim_customer",
+   "rows_inserted": 6290,
+   "rows_updated": 18
+  },
+  {
+   "batch_id": 9,
+   "table_name": "dw.dim_geography",
+   "rows_inserted": 0,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 9,
+   "table_name": "dw.dim_product",
+   "rows_inserted": 2091,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 9,
+   "table_name": "dw.dim_seller",
+   "rows_inserted": 155,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 9,
+   "table_name": "dw.fact_order_fulfillment",
+   "rows_inserted": 6512,
+   "rows_updated": 2010
+  },
+  {
+   "batch_id": 9,
+   "table_name": "dw.fact_payment",
+   "rows_inserted": 6698,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 9,
+   "table_name": "dw.fact_review",
+   "rows_inserted": 8987,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 9,
+   "table_name": "dw.fact_sales",
+   "rows_inserted": 7248,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 9,
+   "table_name": "dw.fact_seller_monthly_snapshot",
+   "rows_inserted": 3095,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 10,
+   "table_name": "dw.bridge_order_seller",
+   "rows_inserted": 1,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 10,
+   "table_name": "dw.dim_customer",
+   "rows_inserted": 5,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 10,
+   "table_name": "dw.dim_geography",
+   "rows_inserted": 0,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 10,
+   "table_name": "dw.dim_product",
+   "rows_inserted": 0,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 10,
+   "table_name": "dw.dim_seller",
+   "rows_inserted": 0,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 10,
+   "table_name": "dw.fact_order_fulfillment",
+   "rows_inserted": 16,
+   "rows_updated": 56
+  },
+  {
+   "batch_id": 10,
+   "table_name": "dw.fact_payment",
+   "rows_inserted": 16,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 10,
+   "table_name": "dw.fact_review",
+   "rows_inserted": 0,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 10,
+   "table_name": "dw.fact_sales",
+   "rows_inserted": 1,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 10,
+   "table_name": "dw.fact_seller_monthly_snapshot",
+   "rows_inserted": 3095,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 11,
+   "table_name": "dw.bridge_order_seller",
+   "rows_inserted": 0,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 11,
+   "table_name": "dw.dim_customer",
+   "rows_inserted": 1,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 11,
+   "table_name": "dw.dim_geography",
+   "rows_inserted": 0,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 11,
+   "table_name": "dw.dim_product",
+   "rows_inserted": 0,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 11,
+   "table_name": "dw.dim_seller",
+   "rows_inserted": 0,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 11,
+   "table_name": "dw.fact_order_fulfillment",
+   "rows_inserted": 4,
+   "rows_updated": 3
+  },
+  {
+   "batch_id": 11,
+   "table_name": "dw.fact_payment",
+   "rows_inserted": 4,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 11,
+   "table_name": "dw.fact_review",
+   "rows_inserted": 0,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 11,
+   "table_name": "dw.fact_sales",
+   "rows_inserted": 0,
+   "rows_updated": 0
+  },
+  {
+   "batch_id": 11,
+   "table_name": "dw.fact_seller_monthly_snapshot",
+   "rows_inserted": 3095,
+   "rows_updated": 0
+  }
+ ],
+ "dq": [
+  {
+   "batch_id": 11,
+   "check_id": "BR01",
+   "category": "BUSINESS",
+   "description": "review_score ngoài miền [1,5]",
+   "affected_rows": 0,
+   "severity": "ERROR",
+   "status": "PASS"
+  },
+  {
+   "batch_id": 11,
+   "check_id": "BR02",
+   "category": "BUSINESS",
+   "description": "Giá/phí vận chuyển âm",
+   "affected_rows": 0,
+   "severity": "ERROR",
+   "status": "PASS"
+  },
+  {
+   "batch_id": 11,
+   "check_id": "BR03",
+   "category": "BUSINESS",
+   "description": "Tổng thanh toán lệch tổng đơn > 1 BRL (lãi trả góp/voucher) — chỉ thông tin",
+   "affected_rows": 312,
+   "severity": "INFO",
+   "status": "FLAGGED"
+  },
+  {
+   "batch_id": 11,
+   "check_id": "R01",
+   "category": "CLEANSING",
+   "description": "Zip prefix mất số 0 đầu (customers+sellers) -> lpad 5 ký tự",
+   "affected_rows": 25022,
+   "severity": "INFO",
+   "status": "FIXED"
+  },
+  {
+   "batch_id": 11,
+   "check_id": "R02",
+   "category": "CLEANSING",
+   "description": "Đơn delivered nhưng thiếu ngày giao -> giữ trạng thái, loại khỏi tính lead time",
+   "affected_rows": 8,
+   "severity": "WARN",
+   "status": "FLAGGED"
+  },
+  {
+   "batch_id": 11,
+   "check_id": "R03",
+   "category": "CLEANSING",
+   "description": "Mốc thời gian sai thứ tự (carrier < purchase hoặc delivered < carrier) -> gắn cờ dq_timeline_anomaly",
+   "affected_rows": 189,
+   "severity": "WARN",
+   "status": "FLAGGED"
+  },
+  {
+   "batch_id": 11,
+   "check_id": "R04",
+   "category": "CLEANSING",
+   "description": "Sản phẩm thiếu danh mục -> 'unknown'",
+   "affected_rows": 610,
+   "severity": "INFO",
+   "status": "FIXED"
+  },
+  {
+   "batch_id": 11,
+   "check_id": "R05",
+   "category": "CLEANSING",
+   "description": "Sản phẩm thiếu trọng lượng/kích thước -> size_class 'Unknown'",
+   "affected_rows": 2,
+   "severity": "INFO",
+   "status": "FIXED"
+  },
+  {
+   "batch_id": 11,
+   "check_id": "R06",
+   "category": "CLEANSING",
+   "description": "Geolocation trùng nhiều tọa độ/zip -> gộp median về 1 dòng/zip",
+   "affected_rows": 981148,
+   "severity": "INFO",
+   "status": "FIXED"
+  },
+  {
+   "batch_id": 11,
+   "check_id": "R07",
+   "category": "CLEANSING",
+   "description": "Tọa độ nằm ngoài lãnh thổ Brazil -> loại trước khi gộp",
+   "affected_rows": 42,
+   "severity": "INFO",
+   "status": "FIXED"
+  },
+  {
+   "batch_id": 11,
+   "check_id": "R08",
+   "category": "CLEANSING",
+   "description": "Tên thành phố có dấu/khác hoa thường -> chuẩn hóa (vd. \"são paulo\" -> \"sao paulo\")",
+   "affected_rows": 73448,
+   "severity": "INFO",
+   "status": "FIXED"
+  },
+  {
+   "batch_id": 11,
+   "check_id": "R09",
+   "category": "CLEANSING",
+   "description": "review_id lặp lại giữa nhiều đơn -> khóa tự nhiên (review_id, order_id)",
+   "affected_rows": 789,
+   "severity": "INFO",
+   "status": "FIXED"
+  },
+  {
+   "batch_id": 11,
+   "check_id": "R10",
+   "category": "CLEANSING",
+   "description": "Đơn không có dòng sản phẩm (đa số unavailable/canceled) -> chỉ nạp vào fact_order_fulfillment",
+   "affected_rows": 775,
+   "severity": "INFO",
+   "status": "FLAGGED"
+  },
+  {
+   "batch_id": 11,
+   "check_id": "R11",
+   "category": "CLEANSING",
+   "description": "payment_type = not_defined -> 'unknown'",
+   "affected_rows": 3,
+   "severity": "INFO",
+   "status": "FIXED"
+  },
+  {
+   "batch_id": 11,
+   "check_id": "R12",
+   "category": "CLEANSING",
+   "description": "Zip không có tọa độ trong geolocation -> has_coordinates = false",
+   "affected_rows": 169,
+   "severity": "INFO",
+   "status": "FLAGGED"
+  },
+  {
+   "batch_id": 11,
+   "check_id": "RC01",
+   "category": "RECONCILIATION",
+   "description": "Số dòng fact_sales = số order_items của đơn có purchase < cutoff",
+   "affected_rows": 0,
+   "severity": "ERROR",
+   "status": "PASS"
+  },
+  {
+   "batch_id": 11,
+   "check_id": "RC02",
+   "category": "RECONCILIATION",
+   "description": "Tổng doanh thu (price) fact_sales = nguồn (sai lệch tính bằng cent)",
+   "affected_rows": 0,
+   "severity": "ERROR",
+   "status": "PASS"
+  },
+  {
+   "batch_id": 11,
+   "check_id": "RC03",
+   "category": "RECONCILIATION",
+   "description": "Số dòng fact_order_fulfillment = số đơn có purchase < cutoff",
+   "affected_rows": 0,
+   "severity": "ERROR",
+   "status": "PASS"
+  },
+  {
+   "batch_id": 11,
+   "check_id": "RC04",
+   "category": "RECONCILIATION",
+   "description": "Tổng payment_value fact_payment = nguồn (cent)",
+   "affected_rows": 0,
+   "severity": "ERROR",
+   "status": "PASS"
+  },
+  {
+   "batch_id": 11,
+   "check_id": "RC05",
+   "category": "RECONCILIATION",
+   "description": "Bridge: tổng trọng số phân bổ mỗi đơn = 1",
+   "affected_rows": 0,
+   "severity": "ERROR",
+   "status": "PASS"
+  },
+  {
+   "batch_id": 11,
+   "check_id": "RC06",
+   "category": "RECONCILIATION",
+   "description": "SCD2: mỗi khách đúng 1 phiên bản hiện hành & các khoảng hiệu lực không chồng lấn",
+   "affected_rows": 0,
+   "severity": "ERROR",
+   "status": "PASS"
+  },
+  {
+   "batch_id": 11,
+   "check_id": "RC07",
+   "category": "RECONCILIATION",
+   "description": "Periodic snapshot: tổng GMV các tháng đã chụp = GMV fact_sales cùng kỳ (cent)",
+   "affected_rows": 0,
+   "severity": "ERROR",
+   "status": "PASS"
+  },
+  {
+   "batch_id": 11,
+   "check_id": "RI01",
+   "category": "RI",
+   "description": "fact_sales: FK mồ côi (date/product/seller/customer/geo/profile)",
+   "affected_rows": 0,
+   "severity": "ERROR",
+   "status": "PASS"
+  },
+  {
+   "batch_id": 11,
+   "check_id": "RI02",
+   "category": "RI",
+   "description": "fact_order_fulfillment: FK mồ côi (5 vai trò date, customer, geo, profile)",
+   "affected_rows": 0,
+   "severity": "ERROR",
+   "status": "PASS"
+  },
+  {
+   "batch_id": 11,
+   "check_id": "RI03",
+   "category": "RI",
+   "description": "fact_payment / fact_review / bridge / snapshot: FK mồ côi",
+   "affected_rows": 0,
+   "severity": "ERROR",
+   "status": "PASS"
+  },
+  {
+   "batch_id": 11,
+   "check_id": "RI04",
+   "category": "RI",
+   "description": "Fact trỏ tới thành viên Unknown (-1) của product/seller/customer",
+   "affected_rows": 0,
+   "severity": "WARN",
+   "status": "PASS"
+  }
+ ],
+ "scd": {
+  "rows": 96355,
+  "uids": 96096,
+  "new_versions": 259,
+  "changed_uids": 252,
+  "moved_state": 39
+ },
+ "acc": [
+  {
+   "update_count": 0,
+   "n": 78382
+  },
+  {
+   "update_count": 1,
+   "n": 20726
+  },
+  {
+   "update_count": 2,
+   "n": 333
+  }
+ ],
+ "scd_example": [
+  {
+   "customer_unique_id": "1f90117a847636892e3c5bf569f2ac68",
+   "version_no": 1,
+   "zip_prefix": "82510",
+   "city": "curitiba",
+   "state": "PR",
+   "original_state": "PR",
+   "current_state": "SC",
+   "effective_from": "1900-01-01 00:00:00",
+   "effective_to": "2018-01-13 13:52:54",
+   "is_current": false
+  },
+  {
+   "customer_unique_id": "1f90117a847636892e3c5bf569f2ac68",
+   "version_no": 2,
+   "zip_prefix": "88780",
+   "city": "imbituba",
+   "state": "SC",
+   "original_state": "PR",
+   "current_state": "SC",
+   "effective_from": "2018-01-13 13:52:54",
+   "effective_to": "9999-12-31 00:00:00",
+   "is_current": true
+  }
+ ],
+ "olap": {
+  "Q01": {
+   "op": "ROLL-UP (ROLLUP)",
+   "question": "Doanh thu theo phân cấp thời gian Năm > Quý > Tháng, kèm tổng phụ",
+   "ms": 86.00989996921271,
+   "rows": 31,
+   "head": [
+    {
+     "nam": "2017",
+     "quy": "2017-Q1",
+     "thang": "2017-01",
+     "so_don": "789",
+     "doanh_thu": "120313.0"
+    },
+    {
+     "nam": "2017",
+     "quy": "2017-Q1",
+     "thang": "2017-02",
+     "so_don": "1733",
+     "doanh_thu": "247303.0"
+    },
+    {
+     "nam": "2017",
+     "quy": "2017-Q1",
+     "thang": "2017-03",
+     "so_don": "2641",
+     "doanh_thu": "374344.0"
+    },
+    {
+     "nam": "2017",
+     "quy": "2017-Q1",
+     "thang": "",
+     "so_don": "5163",
+     "doanh_thu": "741960.0"
+    },
+    {
+     "nam": "2017",
+     "quy": "2017-Q2",
+     "thang": "2017-04",
+     "so_don": "2391",
+     "doanh_thu": "359927.0"
+    },
+    {
+     "nam": "2017",
+     "quy": "2017-Q2",
+     "thang": "2017-05",
+     "so_don": "3660",
+     "doanh_thu": "506071.0"
+    },
+    {
+     "nam": "2017",
+     "quy": "2017-Q2",
+     "thang": "2017-06",
+     "so_don": "3217",
+     "doanh_thu": "433039.0"
+    },
+    {
+     "nam": "2017",
+     "quy": "2017-Q2",
+     "thang": "",
+     "so_don": "9268",
+     "doanh_thu": "1299037.0"
+    },
+    {
+     "nam": "2017",
+     "quy": "2017-Q3",
+     "thang": "2017-07",
+     "so_don": "3969",
+     "doanh_thu": "498031.0"
+    },
+    {
+     "nam": "2017",
+     "quy": "2017-Q3",
+     "thang": "2017-08",
+     "so_don": "4293",
+     "doanh_thu": "573972.0"
+    },
+    {
+     "nam": "2017",
+     "quy": "2017-Q3",
+     "thang": "2017-09",
+     "so_don": "4243",
+     "doanh_thu": "624402.0"
+    },
+    {
+     "nam": "2017",
+     "quy": "2017-Q3",
+     "thang": "",
+     "so_don": "12505",
+     "doanh_thu": "1696405.0"
+    }
+   ],
+   "cols": [
+    "nam",
+    "quy",
+    "thang",
+    "so_don",
+    "doanh_thu"
+   ]
+  },
+  "Q02": {
+   "op": "DRILL-DOWN",
+   "question": "Từ nhóm ngành \"Electronics & Tech\" khoan xuống từng danh mục con",
+   "ms": 16.06970001012087,
+   "rows": 10,
+   "head": [
+    {
+     "category_group": "Electronics & Tech",
+     "category_name": "computers_accessories",
+     "so_don": "6689",
+     "doanh_thu": "911954.0",
+     "gia_tb": "116.5"
+    },
+    {
+     "category_group": "Electronics & Tech",
+     "category_name": "telephony",
+     "so_don": "4199",
+     "doanh_thu": "323668.0",
+     "gia_tb": "71.2"
+    },
+    {
+     "category_group": "Electronics & Tech",
+     "category_name": "computers",
+     "so_don": "181",
+     "doanh_thu": "222963.0",
+     "gia_tb": "1098.3"
+    },
+    {
+     "category_group": "Electronics & Tech",
+     "category_name": "electronics",
+     "so_don": "2550",
+     "doanh_thu": "160247.0",
+     "gia_tb": "57.9"
+    },
+    {
+     "category_group": "Electronics & Tech",
+     "category_name": "consoles_games",
+     "so_don": "1062",
+     "doanh_thu": "157465.0",
+     "gia_tb": "138.5"
+    },
+    {
+     "category_group": "Electronics & Tech",
+     "category_name": "fixed_telephony",
+     "so_don": "217",
+     "doanh_thu": "59583.0",
+     "gia_tb": "225.7"
+    },
+    {
+     "category_group": "Electronics & Tech",
+     "category_name": "audio",
+     "so_don": "350",
+     "doanh_thu": "50689.0",
+     "gia_tb": "139.3"
+    },
+    {
+     "category_group": "Electronics & Tech",
+     "category_name": "tablets_printing_image",
+     "so_don": "79",
+     "doanh_thu": "7528.0",
+     "gia_tb": "90.7"
+    },
+    {
+     "category_group": "Electronics & Tech",
+     "category_name": "cine_photo",
+     "so_don": "65",
+     "doanh_thu": "6933.0",
+     "gia_tb": "96.3"
+    },
+    {
+     "category_group": "Electronics & Tech",
+     "category_name": "pc_gamer",
+     "so_don": "8",
+     "doanh_thu": "1546.0",
+     "gia_tb": "171.8"
+    }
+   ],
+   "cols": [
+    "category_group",
+    "category_name",
+    "so_don",
+    "doanh_thu",
+    "gia_tb"
+   ]
+  },
+  "Q03": {
+   "op": "SLICE",
+   "question": "Lát cắt năm 2018: doanh thu & giá trị đơn TB theo vùng khách hàng",
+   "ms": 16.525099985301495,
+   "rows": 5,
+   "head": [
+    {
+     "vung_khach_hang": "Sudeste",
+     "so_don": "37504",
+     "doanh_thu": "4894011.0",
+     "aov": "130.5",
+     "phi_vc_pct": "15.5"
+    },
+    {
+     "vung_khach_hang": "Sul",
+     "so_don": "7414",
+     "doanh_thu": "1057389.0",
+     "aov": "142.6",
+     "phi_vc_pct": "18.2"
+    },
+    {
+     "vung_khach_hang": "Nordeste",
+     "so_don": "4813",
+     "doanh_thu": "806026.0",
+     "aov": "167.5",
+     "phi_vc_pct": "22.7"
+    },
+    {
+     "vung_khach_hang": "Centro-Oeste",
+     "so_don": "3158",
+     "doanh_thu": "463599.0",
+     "aov": "146.8",
+     "phi_vc_pct": "18.7"
+    },
+    {
+     "vung_khach_hang": "Norte",
+     "so_don": "886",
+     "doanh_thu": "165027.0",
+     "aov": "186.3",
+     "phi_vc_pct": "23.9"
+    }
+   ],
+   "cols": [
+    "vung_khach_hang",
+    "so_don",
+    "doanh_thu",
+    "aov",
+    "phi_vc_pct"
+   ]
+  },
+  "Q04": {
+   "op": "DICE",
+   "question": "Khối con: H1-2018 x vùng Sudeste x {Health & Beauty, Fashion} x thẻ tín dụng",
+   "ms": 15.761599992401898,
+   "rows": 16,
+   "head": [
+    {
+     "year_quarter": "2018-Q1",
+     "state": "ES",
+     "category_group": "Fashion & Accessories",
+     "so_don": "41",
+     "doanh_thu": "6539.0"
+    },
+    {
+     "year_quarter": "2018-Q1",
+     "state": "ES",
+     "category_group": "Health & Beauty",
+     "so_don": "25",
+     "doanh_thu": "3145.0"
+    },
+    {
+     "year_quarter": "2018-Q1",
+     "state": "MG",
+     "category_group": "Fashion & Accessories",
+     "so_don": "166",
+     "doanh_thu": "29816.0"
+    },
+    {
+     "year_quarter": "2018-Q1",
+     "state": "MG",
+     "category_group": "Health & Beauty",
+     "so_don": "220",
+     "doanh_thu": "33484.0"
+    },
+    {
+     "year_quarter": "2018-Q1",
+     "state": "RJ",
+     "category_group": "Fashion & Accessories",
+     "so_don": "187",
+     "doanh_thu": "40310.0"
+    },
+    {
+     "year_quarter": "2018-Q1",
+     "state": "RJ",
+     "category_group": "Health & Beauty",
+     "so_don": "222",
+     "doanh_thu": "28417.0"
+    },
+    {
+     "year_quarter": "2018-Q1",
+     "state": "SP",
+     "category_group": "Fashion & Accessories",
+     "so_don": "497",
+     "doanh_thu": "87557.0"
+    },
+    {
+     "year_quarter": "2018-Q1",
+     "state": "SP",
+     "category_group": "Health & Beauty",
+     "so_don": "807",
+     "doanh_thu": "99109.0"
+    },
+    {
+     "year_quarter": "2018-Q2",
+     "state": "ES",
+     "category_group": "Fashion & Accessories",
+     "so_don": "40",
+     "doanh_thu": "7663.0"
+    },
+    {
+     "year_quarter": "2018-Q2",
+     "state": "ES",
+     "category_group": "Health & Beauty",
+     "so_don": "41",
+     "doanh_thu": "5562.0"
+    },
+    {
+     "year_quarter": "2018-Q2",
+     "state": "MG",
+     "category_group": "Fashion & Accessories",
+     "so_don": "219",
+     "doanh_thu": "36569.0"
+    },
+    {
+     "year_quarter": "2018-Q2",
+     "state": "MG",
+     "category_group": "Health & Beauty",
+     "so_don": "205",
+     "doanh_thu": "32357.0"
+    }
+   ],
+   "cols": [
+    "year_quarter",
+    "state",
+    "category_group",
+    "so_don",
+    "doanh_thu"
+   ]
+  },
+  "Q05": {
+   "op": "PIVOT",
+   "question": "Xoay trục: nhóm ngành (hàng) x năm (cột), giá trị = doanh thu",
+   "ms": 29.93750001769513,
+   "rows": 11,
+   "head": [
+    {
+     "category_group": "Home & Furniture",
+     "2016": "8948.0",
+     "2017": "1305554.0",
+     "2018": "1573884.0"
+    },
+    {
+     "category_group": "Sports, Toys & Leisure",
+     "2016": "11230.0",
+     "2017": "1483488.0",
+     "2018": "1456164.0"
+    },
+    {
+     "category_group": "Electronics & Tech",
+     "2016": "8010.0",
+     "2017": "906949.0",
+     "2018": "987618.0"
+    },
+    {
+     "category_group": "Health & Beauty",
+     "2016": "10511.0",
+     "2017": "696806.0",
+     "2018": "952057.0"
+    },
+    {
+     "category_group": "Fashion & Accessories",
+     "2016": "3989.0",
+     "2017": "685358.0",
+     "2018": "858308.0"
+    },
+    {
+     "category_group": "Construction & Garden",
+     "2016": "1360.0",
+     "2017": "343190.0",
+     "2018": "513509.0"
+    },
+    {
+     "category_group": "Auto & Industry",
+     "2016": "3499.0",
+     "2017": "300678.0",
+     "2018": "429121.0"
+    },
+    {
+     "category_group": "Home Appliances",
+     "2016": "1707.0",
+     "2017": "178358.0",
+     "2018": "310512.0"
+    },
+    {
+     "category_group": "Books, Media & Stationery",
+     "2016": "387.0",
+     "2017": "128190.0",
+     "2018": "185724.0"
+    },
+    {
+     "category_group": "Unknown",
+     "2016": "66.0",
+     "2017": "106047.0",
+     "2018": "73422.0"
+    },
+    {
+     "category_group": "Food & Drinks",
+     "2016": "80.0",
+     "2017": "21190.0",
+     "2018": "45732.0"
+    }
+   ],
+   "cols": [
+    "category_group",
+    "2016",
+    "2017",
+    "2018"
+   ]
+  },
+  "Q06": {
+   "op": "CUBE",
+   "question": "Mọi tổ hợp vùng khách hàng x phương thức thanh toán (GROUPING() phân biệt dòng tổng)",
+   "ms": 93.34369999123737,
+   "rows": 32,
+   "head": [
+    {
+     "vung": "Centro-Oeste",
+     "thanh_toan": "credit_card",
+     "grouping_id": "0",
+     "so_don": "4382",
+     "gia_tri_tt": "813131.0",
+     "ky_tra_gop_tb": "3.57"
+    },
+    {
+     "vung": "Centro-Oeste",
+     "thanh_toan": "boleto",
+     "grouping_id": "0",
+     "so_don": "1258",
+     "gia_tri_tt": "188337.0",
+     "ky_tra_gop_tb": "1.0"
+    },
+    {
+     "vung": "Centro-Oeste",
+     "thanh_toan": "voucher",
+     "grouping_id": "0",
+     "so_don": "204",
+     "gia_tri_tt": "20804.0",
+     "ky_tra_gop_tb": "1.0"
+    },
+    {
+     "vung": "Centro-Oeste",
+     "thanh_toan": "debit_card",
+     "grouping_id": "0",
+     "so_don": "56",
+     "gia_tri_tt": "7525.0",
+     "ky_tra_gop_tb": "1.0"
+    },
+    {
+     "vung": "Nordeste",
+     "thanh_toan": "credit_card",
+     "grouping_id": "0",
+     "so_don": "7381",
+     "gia_tri_tt": "1517229.0",
+     "ky_tra_gop_tb": "4.17"
+    },
+    {
+     "vung": "Nordeste",
+     "thanh_toan": "boleto",
+     "grouping_id": "0",
+     "so_don": "1709",
+     "gia_tri_tt": "311975.0",
+     "ky_tra_gop_tb": "1.0"
+    },
+    {
+     "vung": "Nordeste",
+     "thanh_toan": "voucher",
+     "grouping_id": "0",
+     "so_don": "423",
+     "gia_tri_tt": "44863.0",
+     "ky_tra_gop_tb": "1.0"
+    },
+    {
+     "vung": "Nordeste",
+     "thanh_toan": "debit_card",
+     "grouping_id": "0",
+     "so_don": "139",
+     "gia_tri_tt": "24412.0",
+     "ky_tra_gop_tb": "1.0"
+    },
+    {
+     "vung": "Norte",
+     "thanh_toan": "credit_card",
+     "grouping_id": "0",
+     "so_don": "1369",
+     "gia_tri_tt": "312653.0",
+     "ky_tra_gop_tb": "4.06"
+    },
+    {
+     "vung": "Norte",
+     "thanh_toan": "boleto",
+     "grouping_id": "0",
+     "so_don": "425",
+     "gia_tri_tt": "87464.0",
+     "ky_tra_gop_tb": "1.0"
+    },
+    {
+     "vung": "Norte",
+     "thanh_toan": "voucher",
+     "grouping_id": "0",
+     "so_don": "71",
+     "gia_tri_tt": "8958.0",
+     "ky_tra_gop_tb": "1.0"
+    },
+    {
+     "vung": "Norte",
+     "thanh_toan": "debit_card",
+     "grouping_id": "0",
+     "so_don": "27",
+     "gia_tri_tt": "5547.0",
+     "ky_tra_gop_tb": "1.0"
+    }
+   ],
+   "cols": [
+    "vung",
+    "thanh_toan",
+    "grouping_id",
+    "so_don",
+    "gia_tri_tt",
+    "ky_tra_gop_tb"
+   ]
+  },
+  "Q07": {
+   "op": "GROUPING SETS + ROLE-PLAYING",
+   "question": "Luồng hàng liên vùng: vùng người bán -> vùng khách (2 vai trò của dim_geography)",
+   "ms": 15.968299994710833,
+   "rows": 29,
+   "head": [
+    {
+     "vung_nguoi_ban": "Centro-Oeste",
+     "vung_khach_hang": "Sudeste",
+     "so_dong_hang": "987",
+     "doanh_thu": "120036.0",
+     "khoang_cach_tb_km": "844.0",
+     "phi_vc_tb": "22.1"
+    },
+    {
+     "vung_nguoi_ban": "Centro-Oeste",
+     "vung_khach_hang": "Nordeste",
+     "so_dong_hang": "189",
+     "doanh_thu": "25387.0",
+     "khoang_cach_tb_km": "1521.0",
+     "phi_vc_tb": "30.8"
+    },
+    {
+     "vung_nguoi_ban": "Centro-Oeste",
+     "vung_khach_hang": "Centro-Oeste",
+     "so_dong_hang": "244",
+     "doanh_thu": "21035.0",
+     "khoang_cach_tb_km": "317.0",
+     "phi_vc_tb": "15.2"
+    },
+    {
+     "vung_nguoi_ban": "Centro-Oeste",
+     "vung_khach_hang": "Sul",
+     "so_dong_hang": "150",
+     "doanh_thu": "17700.0",
+     "khoang_cach_tb_km": "1270.0",
+     "phi_vc_tb": "28.8"
+    },
+    {
+     "vung_nguoi_ban": "Centro-Oeste",
+     "vung_khach_hang": "Norte",
+     "so_dong_hang": "45",
+     "doanh_thu": "5649.0",
+     "khoang_cach_tb_km": "1350.0",
+     "phi_vc_tb": "27.3"
+    },
+    {
+     "vung_nguoi_ban": "Centro-Oeste",
+     "vung_khach_hang": "(tất cả)",
+     "so_dong_hang": "1615",
+     "doanh_thu": "189806.0",
+     "khoang_cach_tb_km": "900.0",
+     "phi_vc_tb": "22.9"
+    },
+    {
+     "vung_nguoi_ban": "Nordeste",
+     "vung_khach_hang": "Sudeste",
+     "so_dong_hang": "870",
+     "doanh_thu": "233810.0",
+     "khoang_cach_tb_km": "1747.0",
+     "phi_vc_tb": "32.5"
+    },
+    {
+     "vung_nguoi_ban": "Nordeste",
+     "vung_khach_hang": "Nordeste",
+     "so_dong_hang": "478",
+     "doanh_thu": "129835.0",
+     "khoang_cach_tb_km": "575.0",
+     "phi_vc_tb": "21.5"
+    },
+    {
+     "vung_nguoi_ban": "Nordeste",
+     "vung_khach_hang": "Sul",
+     "so_dong_hang": "173",
+     "doanh_thu": "50054.0",
+     "khoang_cach_tb_km": "2527.0",
+     "phi_vc_tb": "41.6"
+    },
+    {
+     "vung_nguoi_ban": "Nordeste",
+     "vung_khach_hang": "Centro-Oeste",
+     "so_dong_hang": "135",
+     "doanh_thu": "33631.0",
+     "khoang_cach_tb_km": "1619.0",
+     "phi_vc_tb": "31.0"
+    },
+    {
+     "vung_nguoi_ban": "Nordeste",
+     "vung_khach_hang": "Norte",
+     "so_dong_hang": "52",
+     "doanh_thu": "18881.0",
+     "khoang_cach_tb_km": "1759.0",
+     "phi_vc_tb": "44.4"
+    },
+    {
+     "vung_nguoi_ban": "Nordeste",
+     "vung_khach_hang": "(tất cả)",
+     "so_dong_hang": "1708",
+     "doanh_thu": "466211.0",
+     "khoang_cach_tb_km": "1489.0",
+     "phi_vc_tb": "30.6"
+    }
+   ],
+   "cols": [
+    "vung_nguoi_ban",
+    "vung_khach_hang",
+    "so_dong_hang",
+    "doanh_thu",
+    "khoang_cach_tb_km",
+    "phi_vc_tb"
+   ]
+  },
+  "Q08": {
+   "op": "DRILL-ACROSS",
+   "question": "Ghép 3 fact (sales, fulfillment, review) qua chiều chung -> doanh thu vs giao trễ vs hài lòng theo nhóm ngành",
+   "ms": 42.77140001067892,
+   "rows": 11,
+   "head": [
+    {
+     "category_group": "Sports, Toys & Leisure",
+     "so_don": "20631",
+     "doanh_thu": "2950882.0",
+     "tre_pct": "6.4",
+     "lead_time_ngay": "12.1",
+     "diem_review": "4.15",
+     "review_xau_pct": "13.5"
+    },
+    {
+     "category_group": "Home & Furniture",
+     "so_don": "24265",
+     "doanh_thu": "2888386.0",
+     "tre_pct": "6.8",
+     "lead_time_ngay": "12.9",
+     "diem_review": "3.97",
+     "review_xau_pct": "17.2"
+    },
+    {
+     "category_group": "Electronics & Tech",
+     "so_don": "15383",
+     "doanh_thu": "1902576.0",
+     "tre_pct": "6.8",
+     "lead_time_ngay": "13.1",
+     "diem_review": "4.01",
+     "review_xau_pct": "16.1"
+    },
+    {
+     "category_group": "Health & Beauty",
+     "so_don": "12013",
+     "doanh_thu": "1659374.0",
+     "tre_pct": "7.2",
+     "lead_time_ngay": "12.0",
+     "diem_review": "4.18",
+     "review_xau_pct": "13.1"
+    },
+    {
+     "category_group": "Fashion & Accessories",
+     "so_don": "9065",
+     "doanh_thu": "1547654.0",
+     "tre_pct": "6.4",
+     "lead_time_ngay": "12.2",
+     "diem_review": "4.1",
+     "review_xau_pct": "14.4"
+    },
+    {
+     "category_group": "Construction & Garden",
+     "so_don": "5581",
+     "doanh_thu": "858059.0",
+     "tre_pct": "6.3",
+     "lead_time_ngay": "12.9",
+     "diem_review": "4.1",
+     "review_xau_pct": "14.3"
+    },
+    {
+     "category_group": "Auto & Industry",
+     "so_don": "4594",
+     "doanh_thu": "733299.0",
+     "tre_pct": "6.8",
+     "lead_time_ngay": "12.2",
+     "diem_review": "4.08",
+     "review_xau_pct": "14.7"
+    },
+    {
+     "category_group": "Home Appliances",
+     "so_don": "1970",
+     "doanh_thu": "490577.0",
+     "tre_pct": "4.7",
+     "lead_time_ngay": "11.5",
+     "diem_review": "4.15",
+     "review_xau_pct": "13.4"
+    },
+    {
+     "category_group": "Books, Media & Stationery",
+     "so_don": "3244",
+     "doanh_thu": "314300.0",
+     "tre_pct": "6.6",
+     "lead_time_ngay": "12.3",
+     "diem_review": "4.28",
+     "review_xau_pct": "11.4"
+    },
+    {
+     "category_group": "Unknown",
+     "so_don": "1451",
+     "doanh_thu": "179535.0",
+     "tre_pct": "7.2",
+     "lead_time_ngay": "12.7",
+     "diem_review": "3.91",
+     "review_xau_pct": "20.2"
+    },
+    {
+     "category_group": "Food & Drinks",
+     "so_don": "974",
+     "doanh_thu": "67002.0",
+     "tre_pct": "5.7",
+     "lead_time_ngay": "10.2",
+     "diem_review": "4.27",
+     "review_xau_pct": "10.3"
+    }
+   ],
+   "cols": [
+    "category_group",
+    "so_don",
+    "doanh_thu",
+    "tre_pct",
+    "lead_time_ngay",
+    "diem_review",
+    "review_xau_pct"
+   ]
+  },
+  "Q09": {
+   "op": "RANKING (window)",
+   "question": "Top 3 danh mục theo doanh thu trong từng vùng khách hàng",
+   "ms": 14.670300006400794,
+   "rows": 15,
+   "head": [
+    {
+     "region": "Centro-Oeste",
+     "category_name": "watches_gifts",
+     "doanh_thu": "87247.0",
+     "hang": "1"
+    },
+    {
+     "region": "Centro-Oeste",
+     "category_name": "health_beauty",
+     "doanh_thu": "84766.0",
+     "hang": "2"
+    },
+    {
+     "region": "Centro-Oeste",
+     "category_name": "sports_leisure",
+     "doanh_thu": "61004.0",
+     "hang": "3"
+    },
+    {
+     "region": "Nordeste",
+     "category_name": "health_beauty",
+     "doanh_thu": "200267.0",
+     "hang": "1"
+    },
+    {
+     "region": "Nordeste",
+     "category_name": "watches_gifts",
+     "doanh_thu": "164990.0",
+     "hang": "2"
+    },
+    {
+     "region": "Nordeste",
+     "category_name": "sports_leisure",
+     "doanh_thu": "99770.0",
+     "hang": "3"
+    },
+    {
+     "region": "Norte",
+     "category_name": "health_beauty",
+     "doanh_thu": "42234.0",
+     "hang": "1"
+    },
+    {
+     "region": "Norte",
+     "category_name": "watches_gifts",
+     "doanh_thu": "37620.0",
+     "hang": "2"
+    },
+    {
+     "region": "Norte",
+     "category_name": "sports_leisure",
+     "doanh_thu": "26403.0",
+     "hang": "3"
+    },
+    {
+     "region": "Sudeste",
+     "category_name": "health_beauty",
+     "doanh_thu": "785377.0",
+     "hang": "1"
+    },
+    {
+     "region": "Sudeste",
+     "category_name": "bed_bath_table",
+     "doanh_thu": "778642.0",
+     "hang": "2"
+    },
+    {
+     "region": "Sudeste",
+     "category_name": "watches_gifts",
+     "doanh_thu": "773610.0",
+     "hang": "3"
+    }
+   ],
+   "cols": [
+    "region",
+    "category_name",
+    "doanh_thu",
+    "hang"
+   ]
+  },
+  "Q10": {
+   "op": "TIME-SERIES (window)",
+   "question": "Doanh thu tháng, trung bình trượt 3 tháng, tăng trưởng MoM và YoY",
+   "ms": 9.20069997664541,
+   "rows": 20,
+   "head": [
+    {
+     "year_month": "2017-01",
+     "doanh_thu": "120313.0",
+     "ma3": "120313.0",
+     "mom_pct": "nan",
+     "yoy_pct": "nan"
+    },
+    {
+     "year_month": "2017-02",
+     "doanh_thu": "247303.0",
+     "ma3": "183808.0",
+     "mom_pct": "105.5",
+     "yoy_pct": "nan"
+    },
+    {
+     "year_month": "2017-03",
+     "doanh_thu": "374344.0",
+     "ma3": "247320.0",
+     "mom_pct": "51.4",
+     "yoy_pct": "nan"
+    },
+    {
+     "year_month": "2017-04",
+     "doanh_thu": "359927.0",
+     "ma3": "327192.0",
+     "mom_pct": "-3.9",
+     "yoy_pct": "nan"
+    },
+    {
+     "year_month": "2017-05",
+     "doanh_thu": "506071.0",
+     "ma3": "413448.0",
+     "mom_pct": "40.6",
+     "yoy_pct": "nan"
+    },
+    {
+     "year_month": "2017-06",
+     "doanh_thu": "433039.0",
+     "ma3": "433012.0",
+     "mom_pct": "-14.4",
+     "yoy_pct": "nan"
+    },
+    {
+     "year_month": "2017-07",
+     "doanh_thu": "498031.0",
+     "ma3": "479047.0",
+     "mom_pct": "15.0",
+     "yoy_pct": "nan"
+    },
+    {
+     "year_month": "2017-08",
+     "doanh_thu": "573972.0",
+     "ma3": "501681.0",
+     "mom_pct": "15.2",
+     "yoy_pct": "nan"
+    },
+    {
+     "year_month": "2017-09",
+     "doanh_thu": "624402.0",
+     "ma3": "565468.0",
+     "mom_pct": "8.8",
+     "yoy_pct": "nan"
+    },
+    {
+     "year_month": "2017-10",
+     "doanh_thu": "664219.0",
+     "ma3": "620864.0",
+     "mom_pct": "6.4",
+     "yoy_pct": "nan"
+    },
+    {
+     "year_month": "2017-11",
+     "doanh_thu": "1010271.0",
+     "ma3": "766297.0",
+     "mom_pct": "52.1",
+     "yoy_pct": "nan"
+    },
+    {
+     "year_month": "2017-12",
+     "doanh_thu": "743914.0",
+     "ma3": "806135.0",
+     "mom_pct": "-26.4",
+     "yoy_pct": "nan"
+    }
+   ],
+   "cols": [
+    "year_month",
+    "doanh_thu",
+    "ma3",
+    "mom_pct",
+    "yoy_pct"
+   ]
+  },
+  "Q11": {
+   "op": "SCD TYPE 6 (as-was vs as-is)",
+   "question": "Khách đã chuyển bang: doanh thu ghi nhận theo bang lúc mua (Type 2) vs bang hiện tại (Type 1)",
+   "ms": 38.14269998110831,
+   "rows": 18,
+   "head": [
+    {
+     "bang": "SP",
+     "so_khach_as_was": "17",
+     "doanh_thu_as_was": "1349.0",
+     "so_khach_as_is": "11",
+     "doanh_thu_as_is": "3418.0",
+     "chenh_lech": "2069.0"
+    },
+    {
+     "bang": "PR",
+     "so_khach_as_was": "4",
+     "doanh_thu_as_was": "1055.0",
+     "so_khach_as_is": "1",
+     "doanh_thu_as_is": "100.0",
+     "chenh_lech": "-955.0"
+    },
+    {
+     "bang": "DF",
+     "so_khach_as_was": "4",
+     "doanh_thu_as_was": "1008.0",
+     "so_khach_as_is": "1",
+     "doanh_thu_as_is": "208.0",
+     "chenh_lech": "-801.0"
+    },
+    {
+     "bang": "SC",
+     "so_khach_as_was": "7",
+     "doanh_thu_as_was": "1431.0",
+     "so_khach_as_is": "4",
+     "doanh_thu_as_is": "974.0",
+     "chenh_lech": "-457.0"
+    },
+    {
+     "bang": "MA",
+     "so_khach_as_was": "2",
+     "doanh_thu_as_was": "440.0",
+     "so_khach_as_is": "2",
+     "doanh_thu_as_is": "753.0",
+     "chenh_lech": "313.0"
+    },
+    {
+     "bang": "GO",
+     "so_khach_as_was": "3",
+     "doanh_thu_as_was": "478.0",
+     "so_khach_as_is": "1",
+     "doanh_thu_as_is": "765.0",
+     "chenh_lech": "287.0"
+    },
+    {
+     "bang": "PB",
+     "so_khach_as_was": "2",
+     "doanh_thu_as_was": "249.0",
+     "so_khach_as_is": "0",
+     "doanh_thu_as_is": "0.0",
+     "chenh_lech": "-249.0"
+    },
+    {
+     "bang": "MG",
+     "so_khach_as_was": "9",
+     "doanh_thu_as_was": "759.0",
+     "so_khach_as_is": "3",
+     "doanh_thu_as_is": "520.0",
+     "chenh_lech": "-239.0"
+    },
+    {
+     "bang": "CE",
+     "so_khach_as_was": "2",
+     "doanh_thu_as_was": "784.0",
+     "so_khach_as_is": "2",
+     "doanh_thu_as_is": "1016.0",
+     "chenh_lech": "232.0"
+    },
+    {
+     "bang": "BA",
+     "so_khach_as_was": "2",
+     "doanh_thu_as_was": "230.0",
+     "so_khach_as_is": "0",
+     "doanh_thu_as_is": "0.0",
+     "chenh_lech": "-230.0"
+    },
+    {
+     "bang": "PE",
+     "so_khach_as_was": "7",
+     "doanh_thu_as_was": "1043.0",
+     "so_khach_as_is": "3",
+     "doanh_thu_as_is": "831.0",
+     "chenh_lech": "-212.0"
+    },
+    {
+     "bang": "SE",
+     "so_khach_as_was": "3",
+     "doanh_thu_as_was": "268.0",
+     "so_khach_as_is": "2",
+     "doanh_thu_as_is": "444.0",
+     "chenh_lech": "176.0"
+    }
+   ],
+   "cols": [
+    "bang",
+    "so_khach_as_was",
+    "doanh_thu_as_was",
+    "so_khach_as_is",
+    "doanh_thu_as_is",
+    "chenh_lech"
+   ]
+  },
+  "Q12": {
+   "op": "PERIODIC SNAPSHOT (semi-additive)",
+   "question": "Tồn đơn cuối tháng: SUM theo seller là đúng, SUM theo thời gian là SAI -> dùng AVG/LAST",
+   "ms": 7.6772000174969435,
+   "rows": 7,
+   "head": [
+    {
+     "year_quarter": "2017-Q1",
+     "sai_cong_3_thang": "2571.0",
+     "dung_tb_cuoi_thang": "857.0",
+     "dung_ton_cuoi_quy": "1134.0",
+     "gmv_quy_cong_duoc": "741960.0"
+    },
+    {
+     "year_quarter": "2017-Q2",
+     "sai_cong_3_thang": "4760.0",
+     "dung_tb_cuoi_thang": "1587.0",
+     "dung_ton_cuoi_quy": "1533.0",
+     "gmv_quy_cong_duoc": "1299037.0"
+    },
+    {
+     "year_quarter": "2017-Q3",
+     "sai_cong_3_thang": "6302.0",
+     "dung_tb_cuoi_thang": "2101.0",
+     "dung_ton_cuoi_quy": "2262.0",
+     "gmv_quy_cong_duoc": "1696405.0"
+    },
+    {
+     "year_quarter": "2017-Q4",
+     "sai_cong_3_thang": "10902.0",
+     "dung_tb_cuoi_thang": "3634.0",
+     "dung_ton_cuoi_quy": "3486.0",
+     "gmv_quy_cong_duoc": "2418405.0"
+    },
+    {
+     "year_quarter": "2018-Q1",
+     "sai_cong_3_thang": "14170.0",
+     "dung_tb_cuoi_thang": "4723.0",
+     "dung_ton_cuoi_quy": "5217.0",
+     "gmv_quy_cong_duoc": "2777423.0"
+    },
+    {
+     "year_quarter": "2018-Q2",
+     "sai_cong_3_thang": "11605.0",
+     "dung_tb_cuoi_thang": "3868.0",
+     "dung_ton_cuoi_quy": "3308.0",
+     "gmv_quy_cong_duoc": "2858290.0"
+    },
+    {
+     "year_quarter": "2018-Q3",
+     "sai_cong_3_thang": "5485.0",
+     "dung_tb_cuoi_thang": "2743.0",
+     "dung_ton_cuoi_quy": "1781.0",
+     "gmv_quy_cong_duoc": "1750194.0"
+    }
+   ],
+   "cols": [
+    "year_quarter",
+    "sai_cong_3_thang",
+    "dung_tb_cuoi_thang",
+    "dung_ton_cuoi_quy",
+    "gmv_quy_cong_duoc"
+   ]
+  },
+  "Q13": {
+   "op": "ACCUMULATING SNAPSHOT (lag)",
+   "question": "Phân rã thời gian chu trình đơn: duyệt -> người bán xử lý -> vận chuyển, theo quý",
+   "ms": 12.078900006599724,
+   "rows": 7,
+   "head": [
+    {
+     "year_quarter": "2017-Q1",
+     "so_don_da_giao": "4945",
+     "duyet_gio": "8.1",
+     "xu_ly_ngay": "3.0",
+     "van_chuyen_ngay": "9.7",
+     "tong_ngay": "13.0",
+     "cam_ket_ngay": "29.3",
+     "tre_pct": "3.8"
+    },
+    {
+     "year_quarter": "2017-Q2",
+     "so_don_da_giao": "8981",
+     "duyet_gio": "10.5",
+     "xu_ly_ngay": "2.8",
+     "van_chuyen_ngay": "9.3",
+     "tong_ngay": "12.5",
+     "cam_ket_ngay": "25.0",
+     "tre_pct": "3.9"
+    },
+    {
+     "year_quarter": "2017-Q3",
+     "so_don_da_giao": "12201",
+     "duyet_gio": "9.9",
+     "xu_ly_ngay": "2.7",
+     "van_chuyen_ngay": "8.4",
+     "tong_ngay": "11.5",
+     "cam_ket_ngay": "23.1",
+     "tre_pct": "3.4"
+    },
+    {
+     "year_quarter": "2017-Q4",
+     "so_don_da_giao": "17279",
+     "duyet_gio": "10.5",
+     "xu_ly_ngay": "3.4",
+     "van_chuyen_ngay": "10.6",
+     "tong_ngay": "14.4",
+     "cam_ket_ngay": "24.3",
+     "tre_pct": "8.7"
+    },
+    {
+     "year_quarter": "2018-Q1",
+     "so_don_da_giao": "20627",
+     "duyet_gio": "9.5",
+     "xu_ly_ngay": "3.1",
+     "van_chuyen_ngay": "12.2",
+     "tong_ngay": "15.7",
+     "cam_ket_ngay": "24.3",
+     "tre_pct": "12.9"
+    },
+    {
+     "year_quarter": "2018-Q2",
+     "so_don_da_giao": "19560",
+     "duyet_gio": "11.0",
+     "xu_ly_ngay": "2.2",
+     "van_chuyen_ngay": "8.1",
+     "tong_ngay": "10.8",
+     "cam_ket_ngay": "24.7",
+     "tre_pct": "4.2"
+    },
+    {
+     "year_quarter": "2018-Q3",
+     "so_don_da_giao": "12425",
+     "duyet_gio": "11.0",
+     "xu_ly_ngay": "2.2",
+     "van_chuyen_ngay": "5.7",
+     "tong_ngay": "8.3",
+     "cam_ket_ngay": "17.4",
+     "tre_pct": "4.8"
+    }
+   ],
+   "cols": [
+    "year_quarter",
+    "so_don_da_giao",
+    "duyet_gio",
+    "xu_ly_ngay",
+    "van_chuyen_ngay",
+    "tong_ngay",
+    "cam_ket_ngay",
+    "tre_pct"
+   ]
+  },
+  "Q14": {
+   "op": "AGGREGATE NAVIGATION",
+   "question": "Cùng câu hỏi trên bảng tổng hợp (mart.agg_*) thay vì fact chi tiết",
+   "ms": 5.899300042074174,
+   "rows": 10,
+   "head": [
+    {
+     "year_quarter": "2018-Q2",
+     "customer_region": "Sudeste",
+     "category_group": "Home & Furniture",
+     "so_don": "3632.0",
+     "doanh_thu": "441757.0"
+    },
+    {
+     "year_quarter": "2018-Q1",
+     "customer_region": "Sudeste",
+     "category_group": "Home & Furniture",
+     "so_don": "3478.0",
+     "doanh_thu": "406687.0"
+    },
+    {
+     "year_quarter": "2018-Q1",
+     "customer_region": "Sudeste",
+     "category_group": "Sports, Toys & Leisure",
+     "so_don": "2809.0",
+     "doanh_thu": "382591.0"
+    },
+    {
+     "year_quarter": "2018-Q2",
+     "customer_region": "Sudeste",
+     "category_group": "Sports, Toys & Leisure",
+     "so_don": "2627.0",
+     "doanh_thu": "363088.0"
+    },
+    {
+     "year_quarter": "2018-Q1",
+     "customer_region": "Sudeste",
+     "category_group": "Electronics & Tech",
+     "so_don": "2792.0",
+     "doanh_thu": "291343.0"
+    },
+    {
+     "year_quarter": "2018-Q3",
+     "customer_region": "Sudeste",
+     "category_group": "Home & Furniture",
+     "so_don": "2369.0",
+     "doanh_thu": "273607.0"
+    },
+    {
+     "year_quarter": "2018-Q2",
+     "customer_region": "Sudeste",
+     "category_group": "Health & Beauty",
+     "so_don": "1894.0",
+     "doanh_thu": "246549.0"
+    },
+    {
+     "year_quarter": "2018-Q2",
+     "customer_region": "Sudeste",
+     "category_group": "Fashion & Accessories",
+     "so_don": "1366.0",
+     "doanh_thu": "240683.0"
+    },
+    {
+     "year_quarter": "2018-Q2",
+     "customer_region": "Sudeste",
+     "category_group": "Electronics & Tech",
+     "so_don": "1890.0",
+     "doanh_thu": "210413.0"
+    },
+    {
+     "year_quarter": "2018-Q3",
+     "customer_region": "Sudeste",
+     "category_group": "Sports, Toys & Leisure",
+     "so_don": "1588.0",
+     "doanh_thu": "201843.0"
+    }
+   ],
+   "cols": [
+    "year_quarter",
+    "customer_region",
+    "category_group",
+    "so_don",
+    "doanh_thu"
+   ]
+  }
+ },
+ "bench": {
+  "base_ms": 30.474299972411245,
+  "agg_ms": 3.6937000113539398,
+  "agg_rows": 11823
+ },
+ "review_bucket": [
+  {
+   "delay_bucket": "1. Sớm >=10 ngày",
+   "n": 57203,
+   "r": 4.322713294086635,
+   "neg": 0.08953519022932958
+  },
+  {
+   "delay_bucket": "2. Sớm/đúng hạn <10 ngày",
+   "n": 31441,
+   "r": 4.241986051570798,
+   "neg": 0.09709514364322733
+  },
+  {
+   "delay_bucket": "3. Trễ 1-3 ngày",
+   "n": 2662,
+   "r": 3.7659332321699543,
+   "neg": 0.19119878603945373
+  },
+  {
+   "delay_bucket": "4. Trễ 4-7 ngày",
+   "n": 1819,
+   "r": 2.3181049069373945,
+   "neg": 0.6125211505922166
+  },
+  {
+   "delay_bucket": "5. Trễ >7 ngày",
+   "n": 3345,
+   "r": 1.7269372693726937,
+   "neg": 0.784440344403444
+  }
+ ],
+ "dss1": {
+  "olist": {
+   "avg_promise_days": 21.821383060806898,
+   "on_time_rate": 0.9107692307692308,
+   "late_gt3_share": 0.055358539765319424,
+   "expected_review": 4.121091200993429,
+   "demand_index": 1.0
+  },
+  "frontier": [
+   {
+    "policy": "ml",
+    "alpha": 0.6,
+    "avg_promise_days": 13.35348109517601,
+    "on_time_rate": 0.7459191655801826,
+    "late_gt3_share": 0.14130378096479793,
+    "expected_review": 3.8188673650937464,
+    "demand_index": 1.1986132460218415
+   },
+   {
+    "policy": "ml",
+    "alpha": 0.625,
+    "avg_promise_days": 13.781329856584094,
+    "on_time_rate": 0.7639634941329857,
+    "late_gt3_share": 0.1330638852672751,
+    "expected_review": 3.8452973793324388,
+    "demand_index": 1.1884453065536158
+   },
+   {
+    "policy": "ml",
+    "alpha": 0.65,
+    "avg_promise_days": 14.173663624511082,
+    "on_time_rate": 0.7796088657105607,
+    "late_gt3_share": 0.12518904823989568,
+    "expected_review": 3.8689435228455933,
+    "demand_index": 1.1791720786266429
+   },
+   {
+    "policy": "ml",
+    "alpha": 0.675,
+    "avg_promise_days": 14.625580182529335,
+    "on_time_rate": 0.7935071707953064,
+    "late_gt3_share": 0.11736636245110821,
+    "expected_review": 3.8926448691199877,
+    "demand_index": 1.1687583682437575
+   },
+   {
+    "policy": "ml",
+    "alpha": 0.7,
+    "avg_promise_days": 15.085762711864406,
+    "on_time_rate": 0.8085788787483703,
+    "late_gt3_share": 0.1097522816166884,
+    "expected_review": 3.9171305373578704,
+    "demand_index": 1.1582277712480964
+   },
+   {
+    "policy": "ml",
+    "alpha": 0.725,
+    "avg_promise_days": 15.554993481095176,
+    "on_time_rate": 0.8222164276401565,
+    "late_gt3_share": 0.1034941329856584,
+    "expected_review": 3.9390907964519193,
+    "demand_index": 1.147440495580471
+   },
+   {
+    "policy": "ml",
+    "alpha": 0.75,
+    "avg_promise_days": 16.11955671447197,
+    "on_time_rate": 0.8376271186440678,
+    "late_gt3_share": 0.09431551499348109,
+    "expected_review": 3.966857670194522,
+    "demand_index": 1.1348978361420932
+   },
+   {
+    "policy": "ml",
+    "alpha": 0.775,
+    "avg_promise_days": 16.774315514993482,
+    "on_time_rate": 0.8541590612777054,
+    "late_gt3_share": 0.08443285528031291,
+    "expected_review": 3.997122628967745,
+    "demand_index": 1.1201800659432701
+   },
+   {
+    "policy": "ml",
+    "alpha": 0.8,
+    "avg_promise_days": 17.453898305084746,
+    "on_time_rate": 0.8678226857887875,
+    "late_gt3_share": 0.07650586701434159,
+    "expected_review": 4.023700026811975,
+    "demand_index": 1.1052955439477534
+   },
+   {
+    "policy": "ml",
+    "alpha": 0.825,
+    "avg_promise_days": 18.177887874837026,
+    "on_time_rate": 0.8826857887874837,
+    "late_gt3_share": 0.06949152542372881,
+    "expected_review": 4.049857531085274,
+    "demand_index": 1.0896643093994454
+   },
+   {
+    "policy": "ml",
+    "alpha": 0.85,
+    "avg_promise_days": 19.120730117340287,
+    "on_time_rate": 0.8997653194263364,
+    "late_gt3_share": 0.06138200782268579,
+    "expected_review": 4.080339676784223,
+    "demand_index": 1.069583893942306
+   },
+   {
+    "policy": "ml",
+    "alpha": 0.875,
+    "avg_promise_days": 20.030482398956977,
+    "on_time_rate": 0.9125945241199479,
+    "late_gt3_share": 0.05434159061277705,
+    "expected_review": 4.107015186624066,
+    "demand_index": 1.0508035603794867
+   },
+   {
+    "policy": "ml",
+    "alpha": 0.9,
+    "avg_promise_days": 21.33408083441982,
+    "on_time_rate": 0.9283963494132985,
+    "late_gt3_share": 0.04513689700130378,
+    "expected_review": 4.140994541272434,
+    "demand_index": 1.0244388601384369
+   },
+   {
+    "policy": "ml",
+    "alpha": 0.925,
+    "avg_promise_days": 22.915306388526727,
+    "on_time_rate": 0.9415906127770535,
+    "late_gt3_share": 0.0363754889178618,
+    "expected_review": 4.174835016897226,
+    "demand_index": 0.9933313475771666
+   },
+   {
+    "policy": "ml",
+    "alpha": 0.95,
+    "avg_promise_days": 25.309491525423727,
+    "on_time_rate": 0.9578878748370274,
+    "late_gt3_share": 0.02617992177314211,
+    "expected_review": 4.21826532258444,
+    "demand_index": 0.9478282064377554
+   },
+   {
+    "policy": "ml",
+    "alpha": 0.975,
+    "avg_promise_days": 29.828344198174708,
+    "on_time_rate": 0.9776792698826597,
+    "late_gt3_share": 0.014263363754889178,
+    "expected_review": 4.276223309298403,
+    "demand_index": 0.8673847156406267
+   },
+   {
+    "policy": "route",
+    "alpha": 0.6,
+    "avg_promise_days": 14.036818774445893,
+    "on_time_rate": 0.7671707953063885,
+    "late_gt3_share": 0.14318122555410692,
+    "expected_review": 3.829783708197379,
+    "demand_index": 1.18276708308442
+   },
+   {
+    "policy": "route",
+    "alpha": 0.625,
+    "avg_promise_days": 14.534758800521512,
+    "on_time_rate": 0.7834941329856584,
+    "late_gt3_share": 0.13361147327249023,
+    "expected_review": 3.8583931933733795,
+    "demand_index": 1.1709476161252574
+   },
+   {
+    "policy": "route",
+    "alpha": 0.65,
+    "avg_promise_days": 15.061069100391133,
+    "on_time_rate": 0.80122555410691,
+    "late_gt3_share": 0.12338983050847457,
+    "expected_review": 3.8881592712574418,
+    "demand_index": 1.1587278672018233
+   },
+   {
+    "policy": "route",
+    "alpha": 0.675,
+    "avg_promise_days": 15.583754889178618,
+    "on_time_rate": 0.8152281616688396,
+    "late_gt3_share": 0.11486310299869622,
+    "expected_review": 3.9143933163150524,
+    "demand_index": 1.1466981009371364
+   },
+   {
+    "policy": "route",
+    "alpha": 0.7,
+    "avg_promise_days": 16.162946544980443,
+    "on_time_rate": 0.830612777053455,
+    "late_gt3_share": 0.10745762711864407,
+    "expected_review": 3.939554522013217,
+    "demand_index": 1.133564197574075
+   },
+   {
+    "policy": "route",
+    "alpha": 0.725,
+    "avg_promise_days": 16.780808344198174,
+    "on_time_rate": 0.845606258148631,
+    "late_gt3_share": 0.09788787483702738,
+    "expected_review": 3.9683240284399486,
+    "demand_index": 1.1196943057632798
+   },
+   {
+    "policy": "route",
+    "alpha": 0.75,
+    "avg_promise_days": 17.44620599739244,
+    "on_time_rate": 0.8591134289439374,
+    "late_gt3_share": 0.09009126466753585,
+    "expected_review": 3.9958248832488548,
+    "demand_index": 1.1047836620392566
+   },
+   {
+    "policy": "route",
+    "alpha": 0.775,
+    "avg_promise_days": 18.22988265971317,
+    "on_time_rate": 0.8741069100391134,
+    "late_gt3_share": 0.08153846153846153,
+    "expected_review": 4.02518012711815,
+    "demand_index": 1.0878974869175202
+   },
+   {
+    "policy": "route",
+    "alpha": 0.8,
+    "avg_promise_days": 19.080704041720992,
+    "on_time_rate": 0.88748370273794,
+    "late_gt3_share": 0.07355932203389831,
+    "expected_review": 4.054877084826267,
+    "demand_index": 1.0696724704927016
+   },
+   {
+    "policy": "route",
+    "alpha": 0.825,
+    "avg_promise_days": 20.02445893089961,
+    "on_time_rate": 0.9000782268578879,
+    "late_gt3_share": 0.06529335071707953,
+    "expected_review": 4.085017388608079,
+    "demand_index": 1.0497731699224078
+   },
+   {
+    "policy": "route",
+    "alpha": 0.85,
+    "avg_promise_days": 21.15825293350717,
+    "on_time_rate": 0.9141590612777053,
+    "late_gt3_share": 0.05640156453715776,
+    "expected_review": 4.118840674067384,
+    "demand_index": 1.0266046323036273
+   },
+   {
+    "policy": "route",
+    "alpha": 0.875,
+    "avg_promise_days": 22.4632073011734,
+    "on_time_rate": 0.9277966101694916,
+    "late_gt3_share": 0.04782268578878748,
+    "expected_review": 4.1520351346123405,
+    "demand_index": 1.0007160468758085
+   },
+   {
+    "policy": "route",
+    "alpha": 0.9,
+    "avg_promise_days": 24.14104302477184,
+    "on_time_rate": 0.9413820078226858,
+    "late_gt3_share": 0.03916558018252934,
+    "expected_review": 4.188965884952594,
+    "demand_index": 0.968109463198588
+   },
+   {
+    "policy": "route",
+    "alpha": 0.925,
+    "avg_promise_days": 26.22863102998696,
+    "on_time_rate": 0.9540547588005215,
+    "late_gt3_share": 0.03102998696219035,
+    "expected_review": 4.224934370181208,
+    "demand_index": 0.9292536289030979
+   },
+   {
+    "policy": "route",
+    "alpha": 0.95,
+    "avg_promise_days": 29.3264406779661,
+    "on_time_rate": 0.9692829204693612,
+    "late_gt3_share": 0.019921773142112124,
+    "expected_review": 4.264975411505655,
+    "demand_index": 0.8745493773354469
+   },
+   {
+    "policy": "route",
+    "alpha": 0.975,
+    "avg_promise_days": 34.95530638852673,
+    "on_time_rate": 0.9854237288135593,
+    "late_gt3_share": 0.00954367666232073,
+    "expected_review": 4.303004229474108,
+    "demand_index": 0.7828964405591585
+   }
+  ],
+  "n_test": 38350,
+  "ml_at_0.911": {
+   "policy": "ml",
+   "alpha": 0.875,
+   "avg_promise_days": 20.030482398956977,
+   "on_time_rate": 0.9125945241199479,
+   "late_gt3_share": 0.05434159061277705,
+   "expected_review": 4.107015186624066,
+   "demand_index": 1.0508035603794867
+  },
+  "route_at_0.911": {
+   "policy": "route",
+   "alpha": 0.85,
+   "avg_promise_days": 21.15825293350717,
+   "on_time_rate": 0.9141590612777053,
+   "late_gt3_share": 0.05640156453715776,
+   "expected_review": 4.118840674067384,
+   "demand_index": 1.0266046323036273
+  },
+  "ml_at_0.92": {
+   "policy": "ml",
+   "alpha": 0.9,
+   "avg_promise_days": 21.33408083441982,
+   "on_time_rate": 0.9283963494132985,
+   "late_gt3_share": 0.04513689700130378,
+   "expected_review": 4.140994541272434,
+   "demand_index": 1.0244388601384369
+  },
+  "route_at_0.92": {
+   "policy": "route",
+   "alpha": 0.875,
+   "avg_promise_days": 22.4632073011734,
+   "on_time_rate": 0.9277966101694916,
+   "late_gt3_share": 0.04782268578878748,
+   "expected_review": 4.1520351346123405,
+   "demand_index": 1.0007160468758085
+  },
+  "ml_at_0.95": {
+   "policy": "ml",
+   "alpha": 0.95,
+   "avg_promise_days": 25.309491525423727,
+   "on_time_rate": 0.9578878748370274,
+   "late_gt3_share": 0.02617992177314211,
+   "expected_review": 4.21826532258444,
+   "demand_index": 0.9478282064377554
+  },
+  "route_at_0.95": {
+   "policy": "route",
+   "alpha": 0.925,
+   "avg_promise_days": 26.22863102998696,
+   "on_time_rate": 0.9540547588005215,
+   "late_gt3_share": 0.03102998696219035,
+   "expected_review": 4.224934370181208,
+   "demand_index": 0.9292536289030979
+  },
+  "ml_ontime_at_olist_promise": 0.9324625586242461,
+  "ml_promise_at_olist_ontime": 19.901046098726958,
+  "route_ontime_at_olist_promise": 0.9210891653156263,
+  "route_promise_at_olist_ontime": 20.88530252547202,
+  "monthly": [
+   {
+    "month": "2018-03",
+    "olist_promise": 21.99427838419028,
+    "olist_on_time": 0.784319398235209,
+    "new_promise": 22.675972804860407,
+    "new_on_time": 0.8048604079270939
+   },
+   {
+    "month": "2018-04",
+    "olist_promise": 23.633694726544043,
+    "olist_on_time": 0.9458202011106108,
+    "new_promise": 25.70883986192406,
+    "new_on_time": 0.9684826654660063
+   },
+   {
+    "month": "2018-05",
+    "olist_promise": 22.84349106947805,
+    "olist_on_time": 0.9160617059891107,
+    "new_promise": 25.64640048396854,
+    "new_on_time": 0.9578039927404719
+   },
+   {
+    "month": "2018-06",
+    "olist_promise": 27.709666289302003,
+    "olist_on_time": 0.9862045760430687,
+    "new_promise": 18.744952893674295,
+    "new_on_time": 0.9533983849259757
+   },
+   {
+    "month": "2018-07",
+    "olist_promise": 19.654584747664817,
+    "olist_on_time": 0.9545077204051138,
+    "new_promise": 20.289556699319277,
+    "new_on_time": 0.9644695334550888
+   },
+   {
+    "month": "2018-08",
+    "olist_promise": 15.045246592233882,
+    "olist_on_time": 0.8936238902340597,
+    "new_promise": 14.028571428571428,
+    "new_on_time": 0.9326876513317192
+   }
+  ],
+  "alpha_sel": 0.9,
+  "review_map": {
+   "Sớm >=10 ngày": 4.337075791855203,
+   "Sớm/đúng hạn <10 ngày": 4.18427074551367,
+   "Trễ 1-3 ngày": 3.608955223880597,
+   "Trễ 4-7 ngày": 2.2557894736842106,
+   "Trễ >7 ngày": 1.7052631578947368
+  }
+ },
+ "dss2_metrics": [
+  {
+   "model": "Logistic Regression",
+   "split": "valid",
+   "n": 13472,
+   "late_rate": 0.09857482185273159,
+   "roc_auc": 0.7540995255726464,
+   "pr_auc": 0.3055480484109423,
+   "brier": NaN,
+   "lift_top10": 3.1179327555209704,
+   "recall_top10": 0.3117469879518072
+  },
+  {
+   "model": "Logistic Regression",
+   "split": "test",
+   "n": 38350,
+   "late_rate": 0.07149934810951761,
+   "roc_auc": 0.7241781446764272,
+   "pr_auc": 0.22439217679917323,
+   "brier": NaN,
+   "lift_top10": 3.1145149525893507,
+   "recall_top10": 0.31145149525893506
+  },
+  {
+   "model": "Gradient Boosting",
+   "split": "valid",
+   "n": 13472,
+   "late_rate": 0.09857482185273159,
+   "roc_auc": 0.7189729458843278,
+   "pr_auc": 0.3105543461802527,
+   "brier": 0.08130494958149358,
+   "lift_top10": 3.3664636273378594,
+   "recall_top10": 0.3365963855421687
+  },
+  {
+   "model": "Gradient Boosting",
+   "split": "test",
+   "n": 38350,
+   "late_rate": 0.07149934810951761,
+   "roc_auc": 0.767827945096628,
+   "pr_auc": 0.3266999422742217,
+   "brier": 0.057349059618112874,
+   "lift_top10": 3.7673231218088983,
+   "recall_top10": 0.3767323121808899
+  }
+ ],
+ "dss2_imp": [
+  {
+   "feature": "slack_days",
+   "importance": 0.12725475710138834
+  },
+  {
+   "feature": "customer_state",
+   "importance": 0.06996986266329719
+  },
+  {
+   "feature": "state_transit_14d",
+   "importance": 0.03427478629960116
+  },
+  {
+   "feature": "purchase_month",
+   "importance": 0.026124965466685374
+  },
+  {
+   "feature": "handling_days",
+   "importance": 0.013979102381652933
+  },
+  {
+   "feature": "distance_km",
+   "importance": 0.013177241507415763
+  },
+  {
+   "feature": "state_volume_14d",
+   "importance": 0.006191586064065928
+  },
+  {
+   "feature": "freight_value",
+   "importance": 0.0030444852088830077
+  },
+  {
+   "feature": "seller_state",
+   "importance": 0.0023991173396653944
+  },
+  {
+   "feature": "total_weight_g",
+   "importance": 0.0013308536486205114
+  }
+ ],
+ "dss2": {
+  "t_star": 0.21,
+  "threshold": 0.21,
+  "flagged": 1360.0,
+  "flag_rate": 0.03546284224250326,
+  "tp": 612.0,
+  "fp": 748.0,
+  "precision": 0.45,
+  "recall": 0.22319474835886213,
+  "net_benefit": 2210.0,
+  "breakeven_precision": 0.32
+ },
+ "dss2_sens": [
+  {
+   "c_late": 15,
+   "c_action": 2,
+   "t": 0.17,
+   "flag_rate": 0.04970013037809648,
+   "precision": 0.38195173137460653,
+   "net": 1648.0
+  },
+  {
+   "c_late": 15,
+   "c_action": 4,
+   "t": 0.46,
+   "flag_rate": 0.011238591916558018,
+   "precision": 0.7911832946635731,
+   "net": 833.5
+  },
+  {
+   "c_late": 15,
+   "c_action": 8,
+   "t": 1.01,
+   "flag_rate": 0.0,
+   "precision": 0.0,
+   "net": 0.0
+  },
+  {
+   "c_late": 25,
+   "c_action": 2,
+   "t": 0.1,
+   "flag_rate": 0.11207301173402869,
+   "precision": 0.2550023266635644,
+   "net": 5104.0
+  },
+  {
+   "c_late": 25,
+   "c_action": 4,
+   "t": 0.21,
+   "flag_rate": 0.03546284224250326,
+   "precision": 0.45,
+   "net": 2210.0
+  },
+  {
+   "c_late": 25,
+   "c_action": 8,
+   "t": 0.62,
+   "flag_rate": 0.007170795306388526,
+   "precision": 0.9127272727272727,
+   "net": 937.5
+  },
+  {
+   "c_late": 40,
+   "c_action": 2,
+   "t": 0.05,
+   "flag_rate": 0.27084745762711865,
+   "precision": 0.1613555405795706,
+   "net": 12746.0
+  },
+  {
+   "c_late": 40,
+   "c_action": 4,
+   "t": 0.11,
+   "flag_rate": 0.0976271186440678,
+   "precision": 0.2724358974358974,
+   "net": 5424.0
+  },
+  {
+   "c_late": 40,
+   "c_action": 8,
+   "t": 0.33,
+   "flag_rate": 0.01820078226857888,
+   "precision": 0.6346704871060171,
+   "net": 3276.0
+  }
+ ],
+ "dss3": {
+  "weights": {
+   "gmv": 0.1197,
+   "growth": 0.0678,
+   "on_time_rate": 0.2184,
+   "avg_review": 0.3547,
+   "sla_breach_rate": 0.1197,
+   "cancel_rate": 0.1197
+  },
+  "lambda": 6.032251623030102,
+  "CI": 0.006450324606020352,
+  "CR": 0.005201874682274478,
+  "n": 444,
+  "actions": {
+   "1. Chiến lược — ưu tiên hiển thị, hỗ trợ mở rộng": 67,
+   "2. Duy trì": 154,
+   "3. Theo dõi": 126,
+   "4. Can thiệp — cảnh báo, kế hoạch cải thiện 30 ngày": 97
+  },
+  "rho_median": 0.9737036425168921,
+  "rho_p05": 0.8945684977848215,
+  "top": [
+   {
+    "rank": 1,
+    "seller_id": "6061155addc1e54b4cfb51c1c2a32ad8",
+    "seller_state": "SP",
+    "orders": 28.0,
+    "gmv": 15633.4,
+    "on_time_rate": 0.9635795627223483,
+    "avg_review": 4.734242603500996,
+    "sla_breach_rate": 0.0,
+    "topsis": 0.900649699952345,
+    "p_top_k": 1.0,
+    "action": "1. Chiến lược — ưu tiên hiển thị, hỗ trợ mở rộng"
+   },
+   {
+    "rank": 2,
+    "seller_id": "289cdb325fb7e7f891c38608bf9e0962",
+    "seller_state": "SP",
+    "orders": 106.0,
+    "gmv": 13139.65,
+    "on_time_rate": 0.9810379151100701,
+    "avg_review": 4.604542664315644,
+    "sla_breach_rate": 0.008130081300813009,
+    "topsis": 0.8784288871874515,
+    "p_top_k": 0.996,
+    "action": "1. Chiến lược — ưu tiên hiển thị, hỗ trợ mở rộng"
+   },
+   {
+    "rank": 3,
+    "seller_id": "e882b2a25a10b9c057cc49695f222c19",
+    "seller_state": "RJ",
+    "orders": 45.0,
+    "gmv": 38489.04,
+    "on_time_rate": 1.0,
+    "avg_review": 4.645833333333333,
+    "sla_breach_rate": 0.08695652173913043,
+    "topsis": 0.8728496948167697,
+    "p_top_k": 0.792,
+    "action": "1. Chiến lược — ưu tiên hiển thị, hỗ trợ mở rộng"
+   },
+   {
+    "rank": 4,
+    "seller_id": "d921b68bf747894be13a97ae52b0f386",
+    "seller_state": "MG",
+    "orders": 77.0,
+    "gmv": 15645.8,
+    "on_time_rate": 0.9869185976321871,
+    "avg_review": 4.584304248780727,
+    "sla_breach_rate": 0.025974025974025976,
+    "topsis": 0.8673219868959845,
+    "p_top_k": 0.916,
+    "action": "1. Chiến lược — ưu tiên hiển thị, hỗ trợ mở rộng"
+   },
+   {
+    "rank": 5,
+    "seller_id": "612170e34b97004b3ba37eae81836b4c",
+    "seller_state": "RS",
+    "orders": 107.0,
+    "gmv": 23065.02,
+    "on_time_rate": 0.9906109350098947,
+    "avg_review": 4.431896989544842,
+    "sla_breach_rate": 0.02727272727272727,
+    "topsis": 0.8672558821540485,
+    "p_top_k": 0.85,
+    "action": "1. Chiến lược — ưu tiên hiển thị, hỗ trợ mở rộng"
+   },
+   {
+    "rank": 6,
+    "seller_id": "d9bd94811c3338dceb4181f3dbc0c73e",
+    "seller_state": "SP",
+    "orders": 54.0,
+    "gmv": 6911.02,
+    "on_time_rate": 0.9444444444444444,
+    "avg_review": 4.796296296296297,
+    "sla_breach_rate": 0.01639344262295082,
+    "topsis": 0.8649005020508588,
+    "p_top_k": 0.888,
+    "action": "1. Chiến lược — ưu tiên hiển thị, hỗ trợ mở rộng"
+   },
+   {
+    "rank": 7,
+    "seller_id": "c72de06d72748d1a0dfb2125be43ba63",
+    "seller_state": "BA",
+    "orders": 21.0,
+    "gmv": 17522.0,
+    "on_time_rate": 1.0,
+    "avg_review": 4.476190476190476,
+    "sla_breach_rate": 0.0,
+    "topsis": 0.8636181535280739,
+    "p_top_k": 0.878,
+    "action": "1. Chiến lược — ưu tiên hiển thị, hỗ trợ mở rộng"
+   },
+   {
+    "rank": 8,
+    "seller_id": "c3cfdc648177fdbbbb35635a37472c53",
+    "seller_state": "PR",
+    "orders": 74.0,
+    "gmv": 10782.31,
+    "on_time_rate": 1.0,
+    "avg_review": 4.551847361395147,
+    "sla_breach_rate": 0.02631578947368421,
+    "topsis": 0.8538141114901943,
+    "p_top_k": 0.766,
+    "action": "1. Chiến lược — ưu tiên hiển thị, hỗ trợ mở rộng"
+   }
+  ],
+  "action_profile": [
+   {
+    "action": "1. Chiến lược — ưu tiên hiển thị, hỗ trợ mở rộng",
+    "orders": 63.67164179104478,
+    "gmv": 10426.041641791046,
+    "on_time_rate": 0.9700078247033972,
+    "avg_review": 4.535149745484434,
+    "sla_breach_rate": 0.036097522289273695
+   },
+   {
+    "action": "2. Duy trì",
+    "orders": 76.46753246753246,
+    "gmv": 9188.678766233767,
+    "on_time_rate": 0.9433974196822812,
+    "avg_review": 4.303615510003425,
+    "sla_breach_rate": 0.05173567548058588
+   },
+   {
+    "action": "3. Theo dõi",
+    "orders": 74.43650793650794,
+    "gmv": 8059.904047619048,
+    "on_time_rate": 0.9124322373005543,
+    "avg_review": 3.990854048967387,
+    "sla_breach_rate": 0.05556058020661506
+   },
+   {
+    "action": "4. Can thiệp — cảnh báo, kế hoạch cải thiện 30 ngày",
+    "orders": 57.1958762886598,
+    "gmv": 7793.990412371135,
+    "on_time_rate": 0.8365725410379813,
+    "avg_review": 3.656790176522707,
+    "sla_breach_rate": 0.1625305908737484
+   }
+  ],
+  "pairwise": [
+   [
+    1.0,
+    2.0,
+    0.5,
+    0.333,
+    1.0,
+    1.0
+   ],
+   [
+    0.5,
+    1.0,
+    0.333,
+    0.25,
+    0.5,
+    0.5
+   ],
+   [
+    2.0,
+    3.0,
+    1.0,
+    0.5,
+    2.0,
+    2.0
+   ],
+   [
+    3.0,
+    4.0,
+    2.0,
+    1.0,
+    3.0,
+    3.0
+   ],
+   [
+    1.0,
+    2.0,
+    0.5,
+    0.333,
+    1.0,
+    1.0
+   ],
+   [
+    1.0,
+    2.0,
+    0.5,
+    0.333,
+    1.0,
+    1.0
+   ]
+  ]
+ }
+}

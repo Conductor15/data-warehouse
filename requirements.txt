@@ -1,0 +1,12 @@
+duckdb>=1.4
+pandas>=2.2
+numpy>=2.0
+scikit-learn>=1.5
+streamlit>=1.50
+plotly>=5.24
+matplotlib>=3.9
+pytest>=8.0
+# chỉ cần để tái tạo hình/ảnh chụp/PDF của báo cáo
+playwright>=1.48
+pypdf>=5.0
+pillow>=10.0

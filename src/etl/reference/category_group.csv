@@ -1,0 +1,74 @@
+category_name_pt,category_name,category_group
+cama_mesa_banho,bed_bath_table,Home & Furniture
+moveis_decoracao,furniture_decor,Home & Furniture
+moveis_quarto,furniture_bedroom,Home & Furniture
+moveis_sala,furniture_living_room,Home & Furniture
+moveis_colchao_e_estofado,furniture_mattress_and_upholstery,Home & Furniture
+moveis_escritorio,office_furniture,Home & Furniture
+moveis_cozinha_area_de_servico_jantar_e_jardim,kitchen_dining_laundry_garden_furniture,Home & Furniture
+casa_conforto,home_confort,Home & Furniture
+casa_conforto_2,home_comfort_2,Home & Furniture
+utilidades_domesticas,housewares,Home & Furniture
+la_cuisine,la_cuisine,Home & Furniture
+artigos_de_natal,christmas_supplies,Home & Furniture
+flores,flowers,Home & Furniture
+artigos_de_festas,party_supplies,Home & Furniture
+eletrodomesticos,home_appliances,Home Appliances
+eletrodomesticos_2,home_appliances_2,Home Appliances
+eletroportateis,small_appliances,Home Appliances
+portateis_casa_forno_e_cafe,small_appliances_home_oven_and_coffee,Home Appliances
+climatizacao,air_conditioning,Home Appliances
+portateis_cozinha_e_preparadores_de_alimentos,portable_kitchen_food_processors,Home Appliances
+informatica_acessorios,computers_accessories,Electronics & Tech
+pcs,computers,Electronics & Tech
+pc_gamer,pc_gamer,Electronics & Tech
+eletronicos,electronics,Electronics & Tech
+telefonia,telephony,Electronics & Tech
+telefonia_fixa,fixed_telephony,Electronics & Tech
+tablets_impressao_imagem,tablets_printing_image,Electronics & Tech
+consoles_games,consoles_games,Electronics & Tech
+audio,audio,Electronics & Tech
+cine_foto,cine_photo,Electronics & Tech
+beleza_saude,health_beauty,Health & Beauty
+perfumaria,perfumery,Health & Beauty
+fraldas_higiene,diapers_and_hygiene,Health & Beauty
+fashion_roupa_feminina,fashion_female_clothing,Fashion & Accessories
+fashion_bolsas_e_acessorios,fashion_bags_accessories,Fashion & Accessories
+fashion_roupa_infanto_juvenil,fashion_childrens_clothes,Fashion & Accessories
+fashion_roupa_masculina,fashion_male_clothing,Fashion & Accessories
+fashion_calcados,fashion_shoes,Fashion & Accessories
+fashion_esporte,fashion_sport,Fashion & Accessories
+fashion_underwear_e_moda_praia,fashion_underwear_beach,Fashion & Accessories
+malas_acessorios,luggage_accessories,Fashion & Accessories
+relogios_presentes,watches_gifts,Fashion & Accessories
+esporte_lazer,sports_leisure,"Sports, Toys & Leisure"
+brinquedos,toys,"Sports, Toys & Leisure"
+cool_stuff,cool_stuff,"Sports, Toys & Leisure"
+instrumentos_musicais,musical_instruments,"Sports, Toys & Leisure"
+artes,art,"Sports, Toys & Leisure"
+artes_e_artesanato,arts_and_craftmanship,"Sports, Toys & Leisure"
+pet_shop,pet_shop,"Sports, Toys & Leisure"
+bebes,baby,"Sports, Toys & Leisure"
+construcao_ferramentas_construcao,construction_tools_construction,Construction & Garden
+construcao_ferramentas_iluminacao,construction_tools_lights,Construction & Garden
+construcao_ferramentas_seguranca,construction_tools_safety,Construction & Garden
+construcao_ferramentas_jardim,construction_tools_garden,Construction & Garden
+construcao_ferramentas_ferramentas,construction_tools_tools,Construction & Garden
+ferramentas_jardim,garden_tools,Construction & Garden
+casa_construcao,home_construction,Construction & Garden
+sinalizacao_e_seguranca,signaling_and_security,Construction & Garden
+seguros_e_servicos,security_and_services,Construction & Garden
+livros_interesse_geral,books_general_interest,"Books, Media & Stationery"
+livros_importados,books_imported,"Books, Media & Stationery"
+livros_tecnicos,books_technical,"Books, Media & Stationery"
+cds_dvds_musicais,cds_dvds_musicals,"Books, Media & Stationery"
+dvds_blu_ray,dvds_blu_ray,"Books, Media & Stationery"
+musica,music,"Books, Media & Stationery"
+papelaria,stationery,"Books, Media & Stationery"
+alimentos,food,Food & Drinks
+alimentos_bebidas,food_drink,Food & Drinks
+bebidas,drinks,Food & Drinks
+automotivo,auto,Auto & Industry
+agro_industria_e_comercio,agro_industry_and_commerce,Auto & Industry
+industria_comercio_e_negocios,industry_commerce_and_business,Auto & Industry
+market_place,market_place,Auto & Industry

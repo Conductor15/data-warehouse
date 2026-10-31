@@ -1,0 +1,20 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+warehouse/*.duckdb
+warehouse/*.duckdb.wal
+data/raw/
+.streamlit/secrets.toml
+
+# LaTeX build artifacts (PDF cuoi cung: report/Bao_cao_BTL_CO4031.pdf)
+report/latex/*.aux
+report/latex/*.bbl
+report/latex/*.blg
+report/latex/*.lof
+report/latex/*.lot
+report/latex/*.log
+report/latex/*.out
+report/latex/*.toc
+report/latex/*.run.xml
+report/latex/*-blx.bib
+report/latex/main.pdf

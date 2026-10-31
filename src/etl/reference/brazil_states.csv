@@ -1,0 +1,28 @@
+state,state_name,region,region_vn
+AC,Acre,Norte,Bắc
+AL,Alagoas,Nordeste,Đông Bắc
+AM,Amazonas,Norte,Bắc
+AP,Amapá,Norte,Bắc
+BA,Bahia,Nordeste,Đông Bắc
+CE,Ceará,Nordeste,Đông Bắc
+DF,Distrito Federal,Centro-Oeste,Trung Tây
+ES,Espírito Santo,Sudeste,Đông Nam
+GO,Goiás,Centro-Oeste,Trung Tây
+MA,Maranhão,Nordeste,Đông Bắc
+MG,Minas Gerais,Sudeste,Đông Nam
+MS,Mato Grosso do Sul,Centro-Oeste,Trung Tây
+MT,Mato Grosso,Centro-Oeste,Trung Tây
+PA,Pará,Norte,Bắc
+PB,Paraíba,Nordeste,Đông Bắc
+PE,Pernambuco,Nordeste,Đông Bắc
+PI,Piauí,Nordeste,Đông Bắc
+PR,Paraná,Sul,Nam
+RJ,Rio de Janeiro,Sudeste,Đông Nam
+RN,Rio Grande do Norte,Nordeste,Đông Bắc
+RO,Rondônia,Norte,Bắc
+RR,Roraima,Norte,Bắc
+RS,Rio Grande do Sul,Sul,Nam
+SC,Santa Catarina,Sul,Nam
+SE,Sergipe,Nordeste,Đông Bắc
+SP,São Paulo,Sudeste,Đông Nam
+TO,Tocantins,Norte,Bắc

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Slide BTL CO4031 — Olist DW &amp; DSS</title>
+<style>
+  @page { size: 13.333in 7.5in; margin: 0; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: 'Segoe UI', Arial, sans-serif; color: #1d2733; }
+  .s { width: 13.333in; height: 7.5in; position: relative; overflow: hidden; break-after: page; background: #fbfcfd;
+       padding: 0.95in 0.6in 0.55in; }
+  .s::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 6px; background: #c9a227; }
+  .s h2 { position: absolute; top: 0.28in; left: 0.6in; right: 1.4in; margin: 0; font-size: 26pt; color: #1b3a5c; }
+  .s h2::after { content: ""; display: block; height: 2px; width: 100%; background: #c9a227; margin-top: 6px; }
+  .num { position: absolute; top: 0.3in; right: 0.55in; background: #1b3a5c; color: #fff; font-weight: 700; padding: 4px 12px; font-size: 13pt; }
+  .foot { position: absolute; bottom: 0; left: 0; right: 0; height: 0.36in; background: #1b3a5c; color: #dfe6ee; font-size: 10pt;
+          display: flex; justify-content: space-between; align-items: center; padding: 0 0.6in; }
+  .foot b { color: #c9a227; }
+  .who { position: absolute; top: 0.68in; right: 0.55in; text-align: right; font-size: 10.5pt; color: #8a6d00; font-style: italic; }
+  ul { margin: 0; padding-left: 1.1em; } li { margin: 0.12in 0; font-size: 19pt; line-height: 1.32; }
+  li li { font-size: 17pt; margin: 0.06in 0; }
+  .cols { display: flex; gap: 0.35in; height: 100%; } .cols > div { flex: 1; min-width: 0; }
+  .card { background: #fff; border: 1px solid #d6dde6; border-top: 4px solid #1b3a5c; padding: 0.16in 0.22in; border-radius: 4px; }
+  .card.gold { border-top-color: #c9a227; } .card.green { border-top-color: #3b8b5a; } .card.red { border-top-color: #c73e1d; }
+  .card h3 { margin: 0 0 0.08in; font-size: 17pt; color: #1b3a5c; }
+  .card p { margin: 0.05in 0; font-size: 14.5pt; line-height: 1.3; }
+  .big { font-size: 44pt; font-weight: 800; color: #1b3a5c; line-height: 1.05; } .big small { font-size: 12pt; font-weight: 400; color: #555; display: block; }
+  .kpis { display: flex; gap: 0.2in; } .kpis .card { flex: 1; text-align: center; }
+  table { border-collapse: collapse; width: 100%; font-size: 15pt; }
+  th { background: #1b3a5c; color: #fff; text-align: left; padding: 7px 10px; } td { padding: 7px 10px; border-bottom: 1px solid #dde3ea; }
+  tr:nth-child(even) td { background: #f2f5f8; } td.n { text-align: right; }
+  img.full { width: 100%; } .center { text-align: center; }
+  .hl { color: #c73e1d; font-weight: 700; } .ok { color: #2f7a4a; font-weight: 700; }
+  .note { font-size: 13pt; color: #5b6670; margin-top: 0.1in; line-height: 1.35; }
+  .title { background: #1b3a5c; color: #fff; padding: 0; }
+  .title::before { height: 0; }
+  .title .band { position: absolute; left: 0; right: 0; height: 5px; background: #c9a227; }
+  code { font-family: Consolas, monospace; font-size: 0.9em; background: #eef2f6; padding: 0 4px; border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<!-- 1 -->
+<section class="s title">
+  <div class="band" style="top:1.05in"></div><div class="band" style="bottom:1.05in"></div>
+  <div style="position:absolute;top:0.55in;width:100%;text-align:center;color:#c9a227;font-weight:700;font-size:15pt">CO4031: KHO DỮ LIỆU VÀ HỆ HỖ TRỢ QUYẾT ĐỊNH — BÀI TẬP LỚN HK261</div>
+  <div style="position:absolute;top:2.0in;width:100%;text-align:center;font-size:36pt;font-weight:800;line-height:1.2">Kho dữ liệu &amp; Hệ hỗ trợ quyết định<br>cho sàn thương mại điện tử Olist</div>
+  <div style="position:absolute;top:3.75in;width:100%;text-align:center;font-size:17pt;color:#c9a227;font-style:italic">Tối ưu cam kết ngày giao · Cảnh báo sớm giao trễ · Đánh giá danh mục người bán</div>
+  <div style="position:absolute;top:4.65in;width:100%;text-align:center;font-size:14pt;line-height:1.6">Nhóm [xx] — [Họ tên SV 1] · [Họ tên SV 2] · [Họ tên SV 3]<br>GVHD: ThS. Đỗ Thanh Thái · ĐH Bách Khoa TP.HCM</div>
+</section>
+
+<!-- 2 -->
+<section class="s"><h2>Bài toán: vì sao Olist cần DW + DSS?</h2><div class="num">01</div><div class="who">Trình bày: SV 1</div>
+  <div class="cols">
+    <div>
+      <ul>
+        <li><b>Olist</b>: marketplace Brazil, người bán tự giao hàng, Olist chịu trách nhiệm <b>ngày giao dự kiến</b> &amp; trải nghiệm khách</li>
+        <li>Dữ liệu tác nghiệp phân tán <b>9 bảng · 1,55 triệu dòng</b> · 99.441 đơn (09/2016–10/2018)</li>
+        <li>8 câu hỏi nghiệp vụ → 5 phân tích (OLAP) + <b>3 quyết định</b>:
+          <ul><li>BQ6: <b>hứa giao bao nhiêu ngày</b>?</li><li>BQ7: <b>đơn nào cần can thiệp</b> khi vừa bàn giao?</li><li>BQ8: <b>người bán nào</b> ưu tiên / cảnh báo?</li></ul></li>
+      </ul>
+    </div>
+    <div>
+      <div class="kpis">
+        <div class="card"><div class="big">23,7<small>ngày cam kết TB</small></div></div>
+        <div class="card"><div class="big">12,6<small>ngày giao thực tế TB</small></div></div>
+      </div>
+      <div class="card red" style="margin-top:0.18in"><div class="big hl">1,73★<small>điểm review khi trễ &gt; 7 ngày (78% đánh giá xấu) — so với 4,32★ khi giao sớm</small></div></div>
+      <p class="note">→ Hứa quá xa nhưng vẫn trễ khi có cú sốc, và trễ thì mất khách: một bài toán quyết định <b>bán cấu trúc</b> điển hình cho DSS.</p>
+    </div>
+  </div>
+  <div class="foot"><span>CO4031 · Olist DW &amp; DSS</span><b>Giới thiệu</b></div>
+</section>
+
+<!-- 3 -->
+<section class="s"><h2>Dữ liệu nguồn &amp; data profiling</h2><div class="num">02</div><div class="who">Trình bày: SV 1</div>
+  <div class="cols">
+    <div style="flex:1.1">
+      <table>
+        <tr><th>Phát hiện (đo bằng SQL)</th><th class="n">Số dòng</th><th>Xử lý</th></tr>
+        <tr><td>Zip mất số 0 đầu (01003 → 1003)</td><td class="n">25.022</td><td>landing VARCHAR + lpad</td></tr>
+        <tr><td>Geolocation trùng: 1M dòng / 19K zip</td><td class="n">981.148</td><td>median / zip</td></tr>
+        <tr><td>Tên thành phố lệch dấu ("são paulo")</td><td class="n">73.448</td><td>strip_accents</td></tr>
+        <tr><td>Mốc thời gian sai thứ tự</td><td class="n">189</td><td>gắn cờ, loại khỏi lag</td></tr>
+        <tr><td>review_id lặp giữa nhiều đơn</td><td class="n">789</td><td>khóa (review_id, order_id)</td></tr>
+        <tr><td>Sản phẩm thiếu danh mục</td><td class="n">610</td><td>'unknown'</td></tr>
+        <tr><td>Tọa độ ngoài lãnh thổ Brazil</td><td class="n">42</td><td>loại trước khi gộp</td></tr>
+      </table>
+      <p class="note">12 luật làm sạch R01–R12, mỗi luật ghi số dòng bị ảnh hưởng vào <code>etl.dq_result</code>.</p>
+    </div>
+    <div style="flex:0.9">
+      <div class="card gold"><h3>Phát hiện định hướng thiết kế</h3>
+        <p>• <b>250 khách dùng nhiều địa chỉ</b> → cần SCD Type 2</p>
+        <p>• <b>2.246 đơn trả nhiều phương thức</b> → fact_payment grain riêng</p>
+        <p>• <b>1,3% đơn nhiều người bán</b> → bridge table có trọng số</p>
+        <p>• <b>5 mốc thời gian / đơn</b> → accumulating snapshot + role-playing date</p>
+        <p>• 3 bảng master data tự soạn: bang→vùng, ngày lễ/Black Friday, 73 danh mục → 10 nhóm ngành</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>CO4031 · Olist DW &amp; DSS</span><b>Phân tích yêu cầu</b></div>
+</section>
+
+<!-- 4 -->
+<section class="s"><h2>Kiến trúc hệ thống</h2><div class="num">03</div><div class="who">Trình bày: SV 1</div>
+  <img class="full" src="../report/figures/d_architecture.svg" style="height:5.25in;object-fit:contain">
+  <div class="foot"><span>Staging 2 tầng → Star schema (Kimball) → Semantic layer → Dashboard &amp; DSS · DuckDB (columnar OLAP)</span><b>Thiết kế DW</b></div>
+</section>
+
+<!-- 5 -->
+<section class="s"><h2>Thiết kế: 4 bước Kimball &amp; Bus matrix</h2><div class="num">04</div><div class="who">Trình bày: SV 1</div>
+  <table style="font-size:14pt">
+    <tr><th>Quy trình</th><th>Grain (1 dòng =)</th><th>Loại fact</th><th>Date</th><th>Customer</th><th>Geography</th><th>Product</th><th>Seller</th><th>Profile</th><th>Pay type</th></tr>
+    <tr><td><b>fact_sales</b></td><td>1 dòng sản phẩm</td><td>Transaction</td><td>✓×2</td><td>✓</td><td>✓×2</td><td>✓</td><td>✓</td><td>✓</td><td></td></tr>
+    <tr><td><b>fact_order_fulfillment</b></td><td>1 đơn hàng</td><td>Accumulating</td><td>✓×5</td><td>✓</td><td>✓</td><td></td><td>bridge</td><td>✓</td><td></td></tr>
+    <tr><td><b>fact_payment</b></td><td>1 lần thanh toán</td><td>Transaction</td><td>✓</td><td>✓</td><td></td><td></td><td></td><td>✓</td><td>✓</td></tr>
+    <tr><td><b>fact_review</b></td><td>1 review</td><td>Transaction</td><td>✓×3</td><td>✓</td><td></td><td></td><td>bridge</td><td></td><td></td></tr>
+    <tr><td><b>fact_seller_monthly</b></td><td>seller × tháng</td><td>Periodic snapshot</td><td>✓</td><td></td><td></td><td></td><td>✓</td><td></td><td></td></tr>
+  </table>
+  <div class="cols" style="margin-top:0.25in;height:auto">
+    <div class="card"><h3>Vì sao grain dòng sản phẩm?</h3><p>Nguyên tử nhất → phân tích theo sản phẩm &amp; người bán; câu hỏi cấp đơn vẫn trả lời bằng COUNT(DISTINCT order_id).</p></div>
+    <div class="card"><h3>Vì sao tách 2 fact?</h3><p>Giao hàng diễn ra ở cấp đơn → fulfillment grain đơn. Tách theo grain tránh lỗi trộn grain &amp; đếm trùng.</p></div>
+    <div class="card gold"><h3>Conformed dimensions</h3><p>Date, Customer, Geography, Seller dùng chung → drill-across doanh thu × trễ × hài lòng.</p></div>
+  </div>
+  <div class="foot"><span>5 fact + 1 bridge · 7 dimension · surrogate key + Unknown member (−1)</span><b>Thiết kế DW</b></div>
+</section>
+
+<!-- 6 -->
+<section class="s"><h2>Star schema — Bán hàng</h2><div class="num">05</div><div class="who">Trình bày: SV 1</div>
+  <img class="full" src="../report/figures/d_star_sales.svg" style="height:5.6in;object-fit:contain">
+  <div class="foot"><span>Đỏ = khóa ngoại · [T0]/[T1]/[T2] = kiểu SCD của thuộc tính</span><b>Thiết kế DW</b></div>
+</section>
+
+<!-- 7 -->
+<section class="s"><h2>Accumulating snapshot · Bridge · Periodic snapshot</h2><div class="num">06</div><div class="who">Trình bày: SV 1</div>
+  <img class="full" src="../report/figures/d_star_fulfillment.svg" style="height:5.6in;object-fit:contain">
+  <div class="foot"><span>5 vai trò của dim_date · bridge phân bổ review/trễ cho người bán · snapshot dựng từ chính các fact</span><b>Thiết kế DW</b></div>
+</section>
+
+<!-- 8 -->
+<section class="s"><h2>8 kỹ thuật mô hình hóa nâng cao — mỗi kỹ thuật có lý do</h2><div class="num">07</div><div class="who">Trình bày: SV 1</div>
+  <table style="font-size:14.5pt">
+    <tr><th style="width:22%">Kỹ thuật</th><th style="width:28%">Ở đâu</th><th>Căn cứ dữ liệu</th></tr>
+    <tr><td><b>SCD 2 → Type 6</b></td><td>dim_customer</td><td>khách đổi địa chỉ; cần cả as-was (T2) lẫn as-is (T1) + original (T0)</td></tr>
+    <tr><td><b>3 loại fact</b></td><td>sales · fulfillment · seller_monthly</td><td>sự kiện / tiến trình nhiều mốc / trạng thái định kỳ</td></tr>
+    <tr><td><b>Conformed + bus matrix</b></td><td>Date, Customer, Geography, Seller</td><td>drill-across 3 fact (Q08)</td></tr>
+    <tr><td><b>Degenerate</b></td><td>order_id, order_item_id</td><td>truy vết đơn, khóa drill-across</td></tr>
+    <tr><td><b>Junk</b></td><td>dim_order_profile (160 tổ hợp)</td><td>5 cờ thanh toán/đơn → 1 FK</td></tr>
+    <tr><td><b>Role-playing</b></td><td>date ×5, geography ×2</td><td>5 mốc của đơn; nơi gửi → nơi nhận</td></tr>
+    <tr><td><b>Bridge có trọng số</b></td><td>bridge_order_seller</td><td>review/trễ ở cấp đơn, đơn nhiều người bán</td></tr>
+    <tr><td><b>Aggregate table</b></td><td>agg_sales_month_category_state</td><td>dashboard nhanh hơn 8,3×</td></tr>
+  </table>
+  <p class="note">Mini-dimension (RFM) được cân nhắc nhưng <b>không dùng</b>: 96,9% khách chỉ mua 1 lần → thuộc tính hành vi gần như không đổi.</p>
+  <div class="foot"><span>Theo DW Review 2 — Mô hình hóa &amp; Vận hành</span><b>Thiết kế DW</b></div>
+</section>
+
+<!-- 9 -->
+<section class="s"><h2>ETL tăng dần: mô phỏng hệ nguồn theo thời điểm</h2><div class="num">08</div><div class="who">Trình bày: SV 1</div>
+  <img src="../report/figures/d_etl_flow.svg" style="width:100%;height:2.45in;object-fit:contain">
+  <div class="cols" style="height:auto;margin-top:0.1in">
+    <div class="card"><h3>1 initial + 10 batch tháng</h3><p>Bước <code>asof_source</code>: mốc &gt; cutoff coi như <b>chưa xảy ra</b> → accumulating snapshot được UPDATE thật: <b>21.392 lần</b>, trạng thái cuối khớp nguồn 100%.</p></div>
+    <div class="card gold"><h3>SCD Type 2 → 6</h3><p>LAG so sánh địa chỉ với bản hiện hành → đóng/mở phiên bản; <b>259 phiên bản mới</b>. Fact tra cứu point-in-time: <code>ts ∈ [from, to)</code>.</p></div>
+    <div class="card red"><h3>Mỗi batch = 1 transaction</h3><p>26 kiểm tra DQ; RI/đối soát FAIL → <b>ROLLBACK</b>. Watermark, load_stats, batch_log. 1–2 giây/batch.</p></div>
+  </div>
+  <div class="foot"><span>src/etl/pipeline.py · src/sql/10_batch_load.sql</span><b>ETL</b></div>
+</section>
+
+<!-- 10 -->
+<section class="s"><h2>Chất lượng dữ liệu, đối soát &amp; kiểm thử</h2><div class="num">09</div><div class="who">Trình bày: SV 2</div>
+  <div class="cols">
+    <div>
+      <table style="font-size:14.5pt">
+        <tr><th>Nhóm kiểm tra (mỗi batch)</th><th class="n">Lỗi</th></tr>
+        <tr><td>RI: mọi FK của 5 fact + bridge (cả 5 vai trò date)</td><td class="n ok">0</td></tr>
+        <tr><td>RC: số dòng, doanh thu tới cent, tổng thanh toán</td><td class="n ok">0</td></tr>
+        <tr><td>RC: Σ trọng số bridge = 1 mỗi đơn</td><td class="n ok">0</td></tr>
+        <tr><td>RC: SCD2 — 1 bản hiện hành, khoảng liên tục</td><td class="n ok">0</td></tr>
+        <tr><td>RC: GMV snapshot = GMV fact</td><td class="n ok">0</td></tr>
+        <tr><td>BR: review ∈ [1,5], giá không âm</td><td class="n ok">0</td></tr>
+        <tr><td>BR: thanh toán lệch tổng đơn &gt; 1 BRL (lãi trả góp)</td><td class="n">312 (INFO)</td></tr>
+      </table>
+    </div>
+    <div>
+      <div class="kpis"><div class="card green"><div class="big">11/11<small>batch SUCCESS</small></div></div><div class="card green"><div class="big">24/24<small>pytest PASS</small></div></div></div>
+      <div class="card" style="margin-top:0.18in"><h3>Test đáng chú ý</h3>
+        <p>• mọi dòng fact trỏ đúng phiên bản khách <b>có hiệu lực lúc mua</b></p>
+        <p>• periodic snapshot <b>dense</b>: đủ seller × tháng</p>
+        <p>• tổng ROLLUP = tổng các tháng; 14 truy vấn OLAP chạy được</p>
+        <p>• 8/8 trang dashboard qua <code>streamlit AppTest</code></p></div>
+    </div>
+  </div>
+  <div class="foot"><span>src/sql/05_dq_checks.sql · src/tests/test_warehouse.py</span><b>ETL</b></div>
+</section>
+
+<!-- 11 -->
+<section class="s"><h2>OLAP: 14 truy vấn, mỗi truy vấn một phép &amp; một câu hỏi</h2><div class="num">10</div><div class="who">Trình bày: SV 2</div>
+  <div class="cols">
+    <div>
+      <table style="font-size:14pt">
+        <tr><th>Phép</th><th>Ví dụ</th></tr>
+        <tr><td>ROLLUP · drill-down</td><td>Năm › Quý › Tháng; Electronics → danh mục</td></tr>
+        <tr><td>Slice · Dice · Pivot</td><td>2018 × vùng; H1 × Sudeste × 2 ngành × thẻ</td></tr>
+        <tr><td>CUBE · GROUPING SETS</td><td>vùng × thanh toán; luồng hàng vùng→vùng</td></tr>
+        <tr><td>Drill-across</td><td>doanh thu × % trễ × review (3 fact)</td></tr>
+        <tr><td>Window</td><td>Top-3 ngành/vùng; MA3, MoM, YoY</td></tr>
+        <tr><td>SCD 6</td><td>doanh thu as-was vs as-is</td></tr>
+        <tr><td>Semi-additive</td><td>tồn đơn cuối kỳ</td></tr>
+      </table>
+    </div>
+    <div>
+      <div class="card red"><h3>Semi-additive (Q12) — 2018-Q1</h3>
+        <p>Cộng tồn đơn 3 tháng: <span class="hl">14.170 (sai)</span></p>
+        <p>TB cuối tháng: <b>4.723</b> · Tồn cuối quý: <b>5.217</b></p></div>
+      <div class="card gold" style="margin-top:0.15in"><h3>Aggregate navigation</h3>
+        <p>Fact chi tiết + 3 join: <b>30,5 ms</b> → bảng tổng hợp: <b>3,7 ms</b> (<b>8,3×</b>)</p></div>
+      <div class="card" style="margin-top:0.15in"><h3>Mọi truy vấn &lt; 100 ms</h3><p>đủ cho tương tác thời gian thực trên dashboard</p></div>
+    </div>
+  </div>
+  <div class="foot"><span>src/sql/olap_queries.sql — OLAP Explorer đọc trực tiếp tệp này</span><b>OLAP</b></div>
+</section>
+
+<!-- 12 -->
+<section class="s"><h2>Dashboard &amp; OLAP Explorer (demo)</h2><div class="num">11</div><div class="who">Trình bày: SV 2</div>
+  <div class="cols">
+    <div><img src="../report/figures/screens/home.png" style="width:100%;border:1px solid #ccd;max-height:5.3in;object-fit:cover;object-position:top"></div>
+    <div><img src="../report/figures/screens/olap.png" style="width:100%;border:1px solid #ccd;max-height:5.3in;object-fit:cover;object-position:top"></div>
+  </div>
+  <div class="foot"><span>8 trang · roll-up/drill-down bằng thanh trượt · slice/dice bằng bộ lọc · luôn hiện SQL sinh tự động</span><b>Frontend</b></div>
+</section>
+
+<!-- 13 -->
+<section class="s"><h2>Insight từ kho → định nghĩa bài toán quyết định</h2><div class="num">12</div><div class="who">Trình bày: SV 2</div>
+  <div class="cols" style="height:auto">
+    <div><img src="../report/figures/f3_lag.png" class="full"><p class="note">Accumulating snapshot: cam kết ~24 ngày cố định, nhưng vận chuyển tăng vọt 2018-Q1 → % trễ 12,9%.</p></div>
+    <div><img src="../report/figures/f2_review_delay.png" class="full"><p class="note">Drill-across fulfillment × review: trễ &gt; 7 ngày → 1,73★, 78% đánh giá xấu.</p></div>
+  </div>
+  <div class="kpis" style="position:absolute;left:0.6in;right:0.6in;bottom:0.6in">
+    <div class="card"><div class="big" style="font-size:30pt">23,7 / 12,6<small>ngày cam kết / thực tế</small></div></div>
+    <div class="card"><div class="big" style="font-size:30pt">2,8 + 9,3<small>ngày người bán xử lý + vận chuyển</small></div></div>
+    <div class="card red"><div class="big hl" style="font-size:24pt;padding:6px 0">6,8% → 12,9%<small>tỷ lệ trễ chung → đỉnh 2018-Q1</small></div></div>
+    <div class="card"><div class="big" style="font-size:30pt">&lt; 1%<small>khách quay lại mỗi tháng</small></div></div>
+  </div>
+  <div class="foot"><span>Pha <b style="color:#c9a227">Intelligence</b> của Simon được thực hiện trên kho dữ liệu</span><b>Phân tích</b></div>
+</section>
+
+<!-- 14 -->
+<section class="s"><h2>Kiến trúc DSS (Turban) &amp; quy trình ra quyết định (Simon)</h2><div class="num">13</div><div class="who">Trình bày: SV 3</div>
+  <img src="../report/figures/d_dss_arch.svg" style="width:100%;height:3.3in;object-fit:contain">
+  <table style="font-size:13pt;margin-top:0.08in">
+    <tr><th>Pha</th><th>DSS-1 Cam kết giao</th><th>DSS-2 Cảnh báo trễ</th><th>DSS-3 Người bán</th></tr>
+    <tr><td>Design</td><td>biến QĐ α; hồi quy quantile</td><td>ngưỡng t; GBM + ma trận chi phí</td><td>tiêu chí, so sánh cặp AHP</td></tr>
+    <tr><td>Choice</td><td>Pareto, goal seek, sensitivity</td><td>tối đa lợi ích ròng</td><td>TOPSIS + Monte Carlo</td></tr>
+  </table>
+  <div class="foot"><span>DW = hệ con dữ liệu của DSS · kết quả mô hình ghi ngược vào kho (mart.dss_*)</span><b>DSS</b></div>
+</section>
+
+<!-- 15 -->
+<section class="s"><h2>DSS-1 · Tối ưu cam kết ngày giao</h2><div class="num">14</div><div class="who">Trình bày: SV 3</div>
+  <div class="cols">
+    <div style="flex:1.15"><img src="../report/figures/f4_frontier.png" class="full">
+      <p class="note">Walk-forward 03–08/2018 (38.350 đơn): mỗi tháng train lại trên 6 tháng trước, <b>bỏ 1 tháng đệm</b> vì đơn chưa giao xong (right-censoring).</p></div>
+    <div style="flex:0.85">
+      <div class="card"><h3>Mô hình</h3><p>cam kết = ⌈Q̂<sub>α</sub>(lead time | tuyến, km, kg, phí, mùa)⌉ — hồi quy quantile GBM; bảng theo tuyến làm phương án dễ giải thích.</p></div>
+      <div class="card green" style="margin-top:0.12in"><h3>So với Olist (Pareto)</h3>
+        <p>Cùng 91,1% đúng hạn → <b>−1,9 ngày cam kết (−8,8%)</b></p>
+        <p>Cùng 21,8 ngày → <b>93,2% đúng hạn (+2,2 điểm)</b></p></div>
+      <div class="card gold" style="margin-top:0.12in"><h3>What-if · Goal seek · Sensitivity</h3><p>mục tiêu 92% → α = 0,90 (21,3 ngày); độ co giãn ε chỉ đổi độ lớn, không đổi kết luận.</p></div>
+    </div>
+  </div>
+  <div class="foot"><span>Trung thực: 03/2018 cả Olist &amp; DSS chỉ ~80% → cú sốc không dự báo trước được → cần DSS-2</span><b>DSS</b></div>
+</section>
+
+<!-- 16 -->
+<section class="s"><h2>DSS-2 · Cảnh báo sớm giao trễ</h2><div class="num">15</div><div class="who">Trình bày: SV 3</div>
+  <img src="../report/figures/f5_dss2.png" style="width:100%;height:2.75in;object-fit:contain">
+  <div class="cols" style="height:auto;margin-top:0.1in">
+    <div class="card"><h3>Lặp thiết kế</h3><p>Chấm lúc duyệt đơn: AUC 0,65 ✗ → dời sang <b>lúc bàn giao vận chuyển</b> + đặc trưng point-in-time: slack_days, tắc nghẽn 14 ngày của bang, lịch sử seller tháng trước.</p></div>
+    <div class="card green"><h3>Test 03–08/2018</h3><p>GBM <b>AUC 0,768</b> (LR 0,724) · PR-AUC 0,327 · lift top-10% <b>3,8×</b></p></div>
+    <div class="card gold"><h3>Choice theo chi phí</h3><p>B(t) = TP·C<sub>late</sub>·e − (TP+FP)·C<sub>action</sub> → t* = 0,21: gắn cờ 3,5%, <b>precision 45,0%</b> (&gt; hòa vốn 32%), lợi ích ròng dương.</p></div>
+  </div>
+  <div class="foot"><span>Chi phí đắt (15/8) → không ngưỡng nào có lãi → DSS khuyến nghị không can thiệp: cũng là một quyết định</span><b>DSS</b></div>
+</section>
+
+<!-- 17 -->
+<section class="s"><h2>DSS-3 · Đánh giá người bán bằng AHP + TOPSIS</h2><div class="num">16</div><div class="who">Trình bày: SV 3</div>
+  <img src="../report/figures/f6_dss3.png" style="width:100%;height:2.9in;object-fit:contain">
+  <div class="cols" style="height:auto;margin-top:0.1in">
+    <div class="card"><h3>AHP</h3><p>6 tiêu chí từ periodic snapshot; so sánh cặp Saaty trên giao diện; <b>CR = 0,005 &lt; 0,1</b>; review 35,5%, đúng hạn 21,8%.</p></div>
+    <div class="card green"><h3>TOPSIS → hành động</h3><p>444 người bán: 67 Chiến lược · 154 Duy trì · 126 Theo dõi · <b>97 Can thiệp</b> (SLA trễ 16,3% vs 3,6%).</p></div>
+    <div class="card gold"><h3>Độ vững</h3><p>500 mô phỏng Dirichlet trên trọng số: <b>Spearman ρ trung vị 0,974</b>; chỉ ra các ca giáp ranh cần xem xét thủ công.</p></div>
+  </div>
+  <div class="foot"><span>Người quản lý thay đổi phán đoán → trọng số, xếp hạng, độ nhạy cập nhật tức thì</span><b>DSS</b></div>
+</section>
+
+<!-- 18 -->
+<section class="s"><h2>Đánh giá · Hạn chế · Hướng phát triển</h2><div class="num">17</div><div class="who">Trình bày: SV 3</div>
+  <div class="cols" style="height:auto;align-items:flex-start">
+    <div class="card green"><h3>Đạt được</h3>
+      <p>• Kho đầy đủ: 5 fact, 7 dim, SCD 6, ETL tăng dần</p><p>• 26 kiểm tra DQ/batch, 24 test, khớp nguồn tới cent</p>
+      <p>• 14 truy vấn OLAP &lt; 100 ms, dashboard 8 trang</p><p>• 3 DSS đánh giá ngoài mẫu, what-if/goal seek/sensitivity</p></div>
+    <div class="card red"><h3>Hạn chế</h3>
+      <p>• Nguồn thiếu thời điểm hủy, lịch sử sản phẩm/seller → mô phỏng as-of gần đúng</p>
+      <p>• Co giãn nhu cầu, chi phí can thiệp là <b>giả định</b> (đã tham số hóa)</p>
+      <p>• Cú sốc vận chuyển không dự báo trước được</p><p>• DuckDB nhúng: chưa đa người dùng</p></div>
+    <div class="card gold"><h3>Phát triển</h3>
+      <p>• Airflow + PostgreSQL/cloud DW, dbt (ELT), CDC</p><p>• Cam kết động theo tắc nghẽn; conformal prediction</p>
+      <p>• Uplift modeling cho can thiệp; tối ưu ngân sách</p><p>• Group AHP; phân tích văn bản review</p></div>
+  </div>
+  <div class="foot"><span>CO4031 · Olist DW &amp; DSS</span><b>Đánh giá</b></div>
+</section>
+
+<!-- 19 -->
+<section class="s title">
+  <div class="band" style="top:1.05in"></div><div class="band" style="bottom:1.05in"></div>
+  <div style="position:absolute;top:1.6in;width:100%;text-align:center;font-size:34pt;font-weight:800">Kết luận</div>
+  <div style="position:absolute;top:2.6in;left:1.4in;right:1.4in;font-size:17pt;line-height:1.6;text-align:center">
+    Từ <b style="color:#c9a227">1,55 triệu dòng tác nghiệp</b> → kho dữ liệu Kimball có kiểm soát chất lượng →
+    phát hiện mâu thuẫn "hứa xa mà vẫn trễ" → <b style="color:#c9a227">3 DSS</b> giúp chọn cam kết, can thiệp đúng đơn, xử lý đúng người bán.</div>
+  <div style="position:absolute;top:4.6in;width:100%;text-align:center;font-size:14pt;color:#dfe6ee">
+    Mã nguồn: [link GitHub] · Chạy lại toàn bộ: <code style="background:#2b4e72;color:#fff">pipeline.py → build_dss.py → streamlit run src/app/app.py</code></div>
+  <div style="position:absolute;top:5.3in;width:100%;text-align:center;font-size:24pt;color:#c9a227;font-weight:700">Cảm ơn thầy và các bạn — Q&amp;A</div>
+</section>
+</body>
+</html>
